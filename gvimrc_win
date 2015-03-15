@@ -108,3 +108,4 @@ highlight cType             guifg=#3c8ad9
 highlight cStructure        guifg=#3c8ad9
 highlight cStorageClass     guifg=#3c8ad9
 highlight cshVariables      guifg=magenta
+
