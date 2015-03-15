@@ -1,7 +1,10 @@
 vimrc
 gvimrc
+.netrwhist
 bundle/ctrlp.vim/
 bundle/matchit.zip/
 bundle/nerdtree/
 bundle/surround.vim/
 bundle/vim-dirdiff/
+bundle/cscope_maps/
+bundle/ctags.vim/

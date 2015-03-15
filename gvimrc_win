@@ -11,13 +11,24 @@ set autoindent
 set ruler
 set nowrap
 set nohlsearch
-set encoding=utf-8
-set guifont=DejaVu\ Sans\ Mono\ 10
+set guifont=DejaVu\ Sans\ Mono:h10
 set cursorline
 set sessionoptions-=curdir
 set sessionoptions+=sesdir
 set fdm=marker
 set backspace=2
+
+set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1,ucs-2le,unicode,
+set encoding=utf-8
+set tenc=utf-8
+set fileencoding=utf-8
+
+"language messages zh_TW.utf-8
+language messages en_US.utf-8
+
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
 set listchars=tab:▷۰,trail:۰,eol:⌋
 "set diffexpr=
 "set list
@@ -97,4 +108,3 @@ highlight cType             guifg=#3c8ad9
 highlight cStructure        guifg=#3c8ad9
 highlight cStorageClass     guifg=#3c8ad9
 highlight cshVariables      guifg=magenta
-

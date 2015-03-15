@@ -27,14 +27,6 @@ set listchars=tab:▷۰,trail:۰,eol:⌋
 "========================================
 "=== Plugin Setting =====================
 "========================================
-""=== Ctags
-"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-""=== Cscope
-"" open database: cs add path/xxx.out
-"" Hot key: Ctrl-s, Ctrl-c, cw
-set cscopequickfix=s-,c-,d-,i-,t-,e- 
-
 ""=== Vundle
 set nocompatible
 filetype off
@@ -43,6 +35,8 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-plugins/nerdtree'
+Plugin 'ctags.vim'
+Plugin 'chazy/cscope_maps'
 Plugin 'kien/ctrlp.vim'
 Plugin 'will133/vim-dirdiff'
 Plugin 'matchit.zip'
@@ -60,6 +54,15 @@ filetype plugin indent on
 "nmap <C-s> <C-w><Right>
 "nmap <C-d> <C-w><Up>
 "nmap <C-f> <C-w><Down>
+
+""=== Ctags
+"let Tlist_Ctags_Cmd = 'D:\Software\Editor\GVim\Plugin\ctags58\ctags.exe'
+"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+""=== Cscope
+"" open database: cs add path/xxx.out
+"" Hot key: Ctrl-s, Ctrl-c, cw
+set cscopequickfix=s-,c-,d-,i-,t-,e- 
 
 ""=== CtrlP
 "let g:ctrlp_map = ',,'
@@ -145,8 +148,7 @@ highlight Question          ctermfg=green
 "" Special
 highlight IncSearch         cterm=reverse
 highlight Search            cterm=NONE ctermfg=yellow ctermbg=black 
-"highlight MatchParen        cterm=reverse ctermbg=cyan 
-highlight MatchParen        ctermfg=28
+highlight MatchParen        cterm=reverse ctermbg=cyan ctermfg=28
 highlight DiffAdd           ctermbg=17 
 highlight DiffChange        ctermbg=53 
 highlight DiffDelete        cterm=NONE ctermfg=243 ctermbg=234
