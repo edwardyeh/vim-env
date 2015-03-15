@@ -1,3 +1,5 @@
+vimrc
+gvimrc
 bundle/ctrlp.vim/
 bundle/matchit.zip/
 bundle/nerdtree/
