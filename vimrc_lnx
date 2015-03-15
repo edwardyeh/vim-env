@@ -49,14 +49,14 @@ call vundle#end()
 filetype plugin indent on
 
 ""=== NERDTree
-"nmap <leader>e :NERDTreeToggle<CR>
+nmap <leader>e :NERDTreeToggle<CR>
 "nmap <C-a> <C-w><Left>
 "nmap <C-s> <C-w><Right>
 "nmap <C-d> <C-w><Up>
 "nmap <C-f> <C-w><Down>
 
 ""=== Ctags
-"let Tlist_Ctags_Cmd = 'D:\Software\Editor\GVim\Plugin\ctags58\ctags.exe'
+let Tlist_Ctags_Cmd = 'D:\Software\Editor\GVim\Plugin\ctags58\ctags.exe'
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 ""=== Cscope
@@ -65,7 +65,7 @@ filetype plugin indent on
 set cscopequickfix=s-,c-,d-,i-,t-,e- 
 
 ""=== CtrlP
-"let g:ctrlp_map = ',,'
+let g:ctrlp_map = ',,'
  
 ""=== Taglist 
 "" active/unactive order:TlistToggle

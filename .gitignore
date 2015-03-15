@@ -1,6 +1,7 @@
 vimrc
 gvimrc
 .netrwhist
+*.swp
 bundle/ctrlp.vim/
 bundle/matchit.zip/
 bundle/nerdtree/
