@@ -36,23 +36,23 @@ set listchars=tab:▷۰,trail:۰,eol:⌋
 set cscopequickfix=s-,c-,d-,i-,t-,e- 
 
 ""=== Vundle
-"set nocompatible
-"filetype off
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"
-"Plugin 'gmarik/Vundle.vim'
-"Plugin 'vim-plugins/nerdtree'
-"Plugin 'kien/ctrlp.vim'
-"Plugin 'will133/vim-dirdiff'
-"Plugin 'matchit.zip'
-"Plugin 'surround.vim'
-""Plugin 'winmanager'
-""Plugin 'Lokaltog/vim-powerline'
-""Plugin 'bling/vim-airline'
-"
-"call vundle#end()
-"filetype plugin indent on
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'vim-plugins/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'will133/vim-dirdiff'
+Plugin 'matchit.zip'
+Plugin 'surround.vim'
+"Plugin 'winmanager'
+"Plugin 'Lokaltog/vim-powerline'
+"Plugin 'bling/vim-airline'
+
+call vundle#end()
+filetype plugin indent on
 
 ""=== NERDTree
 "nmap <leader>e :NERDTreeToggle<CR>
