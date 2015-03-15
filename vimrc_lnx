@@ -40,7 +40,16 @@ Plugin 'chazy/cscope_maps'
 Plugin 'kien/ctrlp.vim'
 Plugin 'will133/vim-dirdiff'
 Plugin 'matchit.zip'
-Plugin 'surround.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'majutsushi/tagbar'
+"Plugin 'taglist.vim'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'vcscommand.vim'
+Plugin 'ShowMarks'
+Plugin 'wokmarks.vim'
+"Plugin 'fholgado/minibufexpl.vim'
+Plugin 'godlygeek/tabular'
 "Plugin 'winmanager'
 "Plugin 'Lokaltog/vim-powerline'
 "Plugin 'bling/vim-airline'
@@ -67,11 +76,19 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 ""=== CtrlP
 let g:ctrlp_map = ',,'
  
+""=== Tagbar 
+let g:tagbar_ctags_bin = 'ctags'
+let g:tagbar_left = 1
+map <leader>t <ESC>:TagbarToggle<CR>
+
 ""=== Taglist 
 "" active/unactive order:TlistToggle
 "map <leader>t <ESC>:TlistToggle<CR>
 "let Tlist_Show_One_File=1
 "let Tlist_Exit_OnlyWindow=1
+
+""=== ShowMarks
+let g:showmarks_enable=0
 
 ""=== SrcExpl
 "" active/unactive order:SrcExplToggle
@@ -86,11 +103,11 @@ let g:ctrlp_map = ',,'
 " let g:SuperTabDefaultCompletionType="context"
 
 ""=== MiniBufExplorer
-" let g:miniBufExplMapWindowNavVim = 1 
-" let g:miniBufExplMapWindowNavArrows = 1 
-" let g:miniBufExplMapCTabSwitchBufs = 1 
-" let g:miniBufExplModSelTarget = 1
-" let g:miniBufExplMoreThanOne=0
+"let g:miniBufExplMapWindowNavVim = 1 
+"let g:miniBufExplMapWindowNavArrows = 1 
+"let g:miniBufExplMapCTabSwitchBufs = 1 
+"let g:miniBufExplModSelTarget = 1
+"let g:miniBufExplMoreThanOne=0
 
 ""=== Winmanager
 "let g:NERDTree_title="[NERDTree]"
@@ -109,8 +126,8 @@ let g:ctrlp_map = ',,'
 "========================================
 "=== Personal Setting ===================
 "========================================
-command! VRC vsp ~/.vim/vimrc
-command! GRC vsp ~/.vim/gvimrc
+command! VRC vsp ~/.vimrc
+command! GRC vsp ~/.gvimrc
 command! SD set diff scrollbind fdm=diff
 command! ND set nodiff noscrollbind fdm=marker
 

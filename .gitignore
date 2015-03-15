@@ -9,3 +9,12 @@ bundle/surround.vim/
 bundle/vim-dirdiff/
 bundle/cscope_maps/
 bundle/ctags.vim/
+bundle/ShowMarks/
+bundle/minibufexpl.vim/
+bundle/nerdcommenter/
+bundle/tabular/
+bundle/tagbar/
+bundle/vcscommand.vim/
+bundle/vim-indent-object/
+bundle/vim-surround/
+bundle/wokmarks.vim/
