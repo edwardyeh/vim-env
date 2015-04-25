@@ -51,7 +51,8 @@ highlight lCursor           guifg=bg guibg=fg
 "" Message
 highlight ErrorMsg          guifg=white guibg=red
 "highlight WarningMsg        guifg=darkred 
-highlight WarningMsg        guifg=red 
+"highlight WarningMsg        guifg=red 
+highlight WarningMsg        guifg=#af0000
 highlight MoreMsg           guifg=green 
 highlight Question          guifg=green 
 "" Special
