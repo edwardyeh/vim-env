@@ -29,7 +29,7 @@ Plugin 'godlygeek/tabular'
 "Plugin 'bling/vim-airline'
 
 call vundle#end()
-filetype plugin indent on
+filetype on
 
 ""=== NERDTree
 nmap <leader>e :NERDTreeToggle<CR>
@@ -49,10 +49,19 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 ""=== CtrlP
 let g:ctrlp_map = ',,'
+map ,. <ESC>:CtrlP .<CR>
+
+""=== DirDiff
+let g:DirDiffExcludes = "CVS,*.svn,*.git,*.swp,tags"
+
+""=== Matchit
+let b:match_words = "`ifdef:`endif,begin:end,module:endmodule"
  
 ""=== Tagbar 
-let g:tagbar_ctags_bin = 'ctags'
+let g:tagbar_ctags_bin = 'D:\Software\Editor\GVim\Plugin\ctags58\ctags.exe'
 let g:tagbar_left = 1
+let g:tagbar_autofocus = 1
+highlight link TagbarSignature Constant
 map <leader>t <ESC>:TagbarToggle<CR>
 
 ""=== Taglist 
@@ -97,11 +106,30 @@ let g:showmarks_enable=0
 "
 "nmap wm :WMToggle<CR>
 
+"=== Tabular
+command! -range -nargs=+ TA <line1>,<line2>Tab/<args>/l0
+command! -range -nargs=+ TR <line1>,<line2>Tab/<args>/r0
+command! -range -nargs=+ TC <line1>,<line2>Tab/<args>/c0
+command! -range -nargs=+ TAS <line1>,<line2>Tab/ <args>/l0
+command! -range -nargs=+ TRS <line1>,<line2>Tab/ <args>/r0
+command! -range -nargs=+ TCS <line1>,<line2>Tab/ <args>/c0
+command! -range -nargs=+ TAF <line1>,<line2>Tab/<args> /l0
+command! -range -nargs=+ TRF <line1>,<line2>Tab/<args> /r0
+command! -range -nargs=+ TCF <line1>,<line2>Tab/<args> /c0
+command! -range -nargs=+ TAD <line1>,<line2>Tab/ <args> /l0
+command! -range -nargs=+ TRD <line1>,<line2>Tab/ <args> /r0
+command! -range -nargs=+ TCD <line1>,<line2>Tab/ <args> /c0
+
 "========================================
 "=== Personal Setting ===================
 "========================================
-command! VRC vsp ~/vimfiles/vimrc
-command! GRC vsp ~/vimfiles/gvimrc
-command! SD set diff scrollbind fdm=diff
-command! ND set nodiff noscrollbind fdm=marker
+command! FS     set fdm=syntax
+command! FM     set fdm=marker
+command! SC     set syntax=c
+command! SV     set syntax=verilog
+command! VRC    vsp ~/.vimrc
+command! GRC    vsp ~/.gvimrc
+command! DON    set diff scrollbind fdm=diff
+command! DOF    set nodiff noscrollbind fdm=marker
+
 
