@@ -151,6 +151,10 @@ command! -range -nargs=+ TAD <line1>,<line2>Tab/ <args> /l0
 command! -range -nargs=+ TRD <line1>,<line2>Tab/ <args> /r0
 command! -range -nargs=+ TCD <line1>,<line2>Tab/ <args> /c0
 
+"=== vim-indent-object
+" vii   indent select
+" vai   indent select include upper one level
+
 "========================================
 "=== Personal Setting ===================
 "========================================
