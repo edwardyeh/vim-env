@@ -22,6 +22,7 @@ set fdm=marker
 set backspace=2
 set t_Co=256
 set listchars=tab:▷۰,trail:۰,eol:⌋
+set noro
 "set diffexpr=
 "set list
 
@@ -76,6 +77,9 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 ""=== CtrlP
 let g:ctrlp_map = ',,'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_max_files = 1000000
+let g:ctrlp_user_command = 'find %s -type f'
 map ,. <ESC>:CtrlP .<CR>
 
 ""=== DirDiff
