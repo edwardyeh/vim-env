@@ -26,6 +26,9 @@ set noro
 "set diffexpr=
 "set list
 
+"========================================
+"=== Add Syntax =========================
+"========================================
 au BufNewFile,BufRead .vim,.vimrc setf vim
 
 "========================================
@@ -180,6 +183,26 @@ command! -range -nargs=+ TCD <line1>,<line2>Tab/ <args> /c0
 let g:NERDCustomDelimiters = {
     \ 'vim': { 'left': '"', 'leftAlt': '"', 'rightAlt': '"' },
 \ }
+"}}}
+
+"=== IDE Setting    {{{
+function IDEOpen ()
+    exec "MBEOpen"
+    exec "NERDTree"
+endfunction
+
+function IDEClose ()
+    exec "MBEClose"
+    exec "NERDTreeClose"
+endfunction
+function IDEToggle ()
+    exec "MBEToggle"
+    exec "NERDTreeToggle"
+endfunction
+
+nmap <leader>ws <ESC>:call IDEOpen()<CR>
+nmap <leader>wc <ESC>:call IDEClose()<CR>
+nmap <leader>wt <ESC>:call IDEToggle()<CR>
 "}}}
 
 "========================================
