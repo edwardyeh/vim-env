@@ -25,6 +25,9 @@ set listchars=tab:▷۰,trail:۰,eol:⌋
 set noro
 "set diffexpr=
 "set list
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 
 "========================================
 "=== Add Syntax =========================

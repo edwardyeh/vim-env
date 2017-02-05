@@ -1,4 +1,11 @@
 "========================================
+"=== Editor Environment =================
+"========================================
+set backupdir=~/vimfiles/backup//
+set directory=~/vimfiles/swap//
+set undodir=~/vimfiles/undo//
+
+"========================================
 "=== Plugin Setting =====================
 "========================================
 ""=== Vundle
@@ -20,7 +27,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vcscommand.vim'
-Plugin 'ShowMarks'
+"Plugin 'ShowMarks'
 Plugin 'wokmarks.vim'
 "Plugin 'fholgado/minibufexpl.vim'
 Plugin 'godlygeek/tabular'
