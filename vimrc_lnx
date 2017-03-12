@@ -220,6 +220,10 @@ command! GRC    vsp ~/.gvimrc
 command! DON    set diff scrollbind fdm=diff
 command! DOF    set nodiff noscrollbind fdm=marker
 
+command! -range -nargs=+ C <line1>,<line2>s/^/<args>/g
+command! -range -nargs=+ CY <line1>,<line2>s/^ */&<args>/g
+command! -range -nargs=+ CD <line1>,<line2>s/\(^ *\)<args>/\1/g
+
 "========================================
 "=== Highlight Setting ==================
 "========================================
