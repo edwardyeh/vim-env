@@ -219,6 +219,15 @@ command! VRC    vsp ~/.vimrc
 command! GRC    vsp ~/.gvimrc
 command! DON    set diff scrollbind fdm=diff
 command! DOF    set nodiff noscrollbind fdm=marker
+command! B2H    %!xxd
+
+command! -range -nargs=+ C  <line1>,<line2>s!^\( *.\)!<args>\1!g
+command! -range -nargs=+ CY <line1>,<line2>s!^\( *\)\(.\)!\1<args>\2!g
+command! -range -nargs=+ CD <line1>,<line2>s!^\( *\)<args>!\1!g
+
+command! -range LB  exec <line1>.",".<line2>."TAS (" | <line1>,<line2>s/ (/<TAB>(/g | retab
+command! -range RB  exec <line1>.",".<line2>."TAS )" | <line1>,<line2>s/ )/<TAB>)/g | retab
+command! -range DOT <line1>,<line2>s/^ *\(\w\)/<TAB>.\1/g | retab
 
 "========================================
 "=== Highlight Setting ==================
