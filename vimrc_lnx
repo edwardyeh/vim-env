@@ -175,6 +175,13 @@ command! -range -nargs=+ TCF <line1>,<line2>Tab/<args> /c0
 command! -range -nargs=+ TAD <line1>,<line2>Tab/ <args> /l0
 command! -range -nargs=+ TRD <line1>,<line2>Tab/ <args> /r0
 command! -range -nargs=+ TCD <line1>,<line2>Tab/ <args> /c0
+command! -range -nargs=+ TAZ  <line1>,<line2>Tab/<args>\zs/c0
+command! -range -nargs=+ TAFZ <line1>,<line2>Tab/<args>\zs /l0
+command! -range -nargs=+ TRFZ <line1>,<line2>Tab/<args>\zs /r0
+command! -range -nargs=+ TCFZ <line1>,<line2>Tab/<args>\zs /c0
+
+command! -range TSSUB <line1>,<line2>Tab/ /l0
+command! -range -nargs=+ TS exec <line1>.",".<line2>."TS_SUB" | <line1>,<line2>s/\(<args> \) */\1/g
 "}}}
 
 "=== vim-indent-object      {{{
@@ -227,6 +234,7 @@ command! -range -nargs=+ CD <line1>,<line2>s!^\( *\)<args>!\1!g
 
 command! -range LB  exec <line1>.",".<line2>."TAS (" | <line1>,<line2>s/ (/<TAB>(/g | retab
 command! -range RB  exec <line1>.",".<line2>."TAS )" | <line1>,<line2>s/ )/<TAB>)/g | retab
+command! -range LRB exec <line1>.",".<line2>."LB" | exec <line1>.",".<line2>."RB"
 command! -range DOT <line1>,<line2>s/^ *\(\w\)/<TAB>.\1/g | retab
 
 "========================================
