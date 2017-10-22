@@ -135,7 +135,7 @@ command! -range -nargs=+ TAST exec <line1>.",".<line2>."TAS<args>" | <line1>,<li
 command! -range -nargs=+ TADT exec <line1>.",".<line2>."TAD<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
 
 command! -range TSSUB <line1>,<line2>Tab/ /l0
-command! -range -nargs=+ TS exec <line1>.",".<line2>."TS_SUB" | <line1>,<line2>s/\(<args> \) */\1/g
+command! -range -nargs=+ TS exec <line1>.",".<line2>."TSSUB" | <line1>,<line2>s/\(<args> \) */\1/g
 
 "========================================
 "=== Personal Setting ===================
