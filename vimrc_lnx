@@ -181,9 +181,6 @@ command! -range -nargs=+ TRFZ <line1>,<line2>Tab/<args>\zs /r0
 command! -range -nargs=+ TCFZ <line1>,<line2>Tab/<args>\zs /c0
 command! -range -nargs=+ TAST exec <line1>.",".<line2>."TAS<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
 command! -range -nargs=+ TADT exec <line1>.",".<line2>."TAD<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
-
-command! -range TSSUB <line1>,<line2>Tab/ /l0
-command! -range -nargs=+ TS exec <line1>.",".<line2>."TSSUB" | <line1>,<line2>s/\(<args> \) */\1/g
 "}}}
 
 "=== vim-indent-object      {{{
@@ -230,14 +227,23 @@ command! DON    set diff scrollbind fdm=diff
 command! DOF    set nodiff noscrollbind fdm=marker
 command! B2H    %!xxd
 
-command! -range -nargs=+ C  <line1>,<line2>s!^\( *.\)!<args>\1!g
-command! -range -nargs=+ CY <line1>,<line2>s!^\( *\)\(.\)!\1<args>\2!g
-command! -range -nargs=+ CD <line1>,<line2>s!^\( *\)<args>!\1!g
+command! -range -nargs=+ C   <line1>,<line2>s!^\( *.\)!<args>\1!g
+command! -range -nargs=+ CY  <line1>,<line2>s!^\( *\)\(.\)!\1<args>\2!g
+command! -range -nargs=+ CD  <line1>,<line2>s!^\( *\)<args>!\1!g
+command! -range -nargs=+ DSS <line1>,<line2>s/ *\( <args>\)/\1/g
+command! -range -nargs=+ DSF <line1>,<line2>s/\(<args> \) */\1/g
+command! -range -nargs=+ VADSF exec <line1>.",".<line2>."VA" | exec <line1>.",".<line2>."DSF<args>"
+command! -range -nargs=+ TBS <line1>,<line2>s/<args>/<TAB><args>/g | retab
+command! -range -nargs=+ TBF <line1>,<line2>s/<args>/<args><TAB>/g | retab
 
 command! -range LB  exec <line1>.",".<line2>."TAS (" | <line1>,<line2>s/ (/<TAB>(/g | retab
 command! -range RB  exec <line1>.",".<line2>."TAS )" | <line1>,<line2>s/ )/<TAB>)/g | retab
 command! -range LRB exec <line1>.",".<line2>."LB" | exec <line1>.",".<line2>."RB"
-command! -range DOT <line1>,<line2>s/^ *\(\w\)/<TAB>.\1/g | retab
+command! -range DOT <line1>,<line2>s/^ *\(\S\)/<TAB>.\1/g | retab
+command! -range DSA <line1>,<line2>s/\(\S\)  *\(\S\)/\1 \2/g
+command! -range VA  exec <line1>.",".<line2>."DSA" | <line1>,<line2>Tab/ /l0
+
+command! -nargs=+ TN tabn <args>
 
 "========================================
 "=== Highlight Setting ==================
