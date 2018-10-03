@@ -5,6 +5,13 @@ set backupdir=~/vimfiles/backup//
 set directory=~/vimfiles/swap//
 set undodir=~/vimfiles/undo//
 
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ansi,japan,korea,chinese,taiwan,utf-8
+set termencoding=utf-8
+
+language messages utf-8
+
 "========================================
 "=== Plugin Setting =====================
 "========================================

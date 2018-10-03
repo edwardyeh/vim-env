@@ -13,7 +13,6 @@ set nowrap
 set nohlsearch
 set incsearch
 set mouse=a
-set encoding=utf-8
 set guifont=DejaVu\ Sans\ Mono
 set cursorline
 set sessionoptions-=curdir
@@ -22,12 +21,19 @@ set fdm=marker
 set backspace=2
 set t_Co=256
 set listchars=tab:▷۰,trail:۰,eol:⌋
-set noro
 "set diffexpr=
 "set list
+
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
+
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ansi,japan,korea,chinese,taiwan,utf-8
+set termencoding=utf-8
+
+language messages utf-8
 
 "========================================
 "=== Add Syntax =========================

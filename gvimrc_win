@@ -18,21 +18,15 @@ set sessionoptions-=curdir
 set sessionoptions+=sesdir
 set fdm=marker
 set backspace=2
-
-set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1,ucs-2le,unicode,
-set encoding=utf-8
-set tenc=utf-8
-set fileencoding=utf-8
-
-"language messages zh_TW.utf-8
-language messages en_US.utf-8
-
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-
 set listchars=tab:▷۰,trail:۰,eol:⌋
 "set diffexpr=
 "set list
+
+"language messages zh_TW.utf-8
+"language messages en_US.utf-8
+
+"source $VIMRUNTIME/delmenu.vim
+"source $VIMRUNTIME/menu.vim
 
 "========================================
 "=== Highlight Setting ==================
