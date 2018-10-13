@@ -12,7 +12,7 @@ set ruler
 set nowrap
 set nohlsearch
 set incsearch
-set guifont=DejaVu\ Sans\ Mono:h10
+set guifont=DejaVu\ Sans\ Mono\ 10
 set cursorline
 set sessionoptions-=curdir
 set sessionoptions+=sesdir
