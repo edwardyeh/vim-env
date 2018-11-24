@@ -21,6 +21,7 @@ set fdm=marker
 set backspace=2
 set t_Co=256
 set listchars=tab:▷۰,trail:۰,eol:⌋
+set noro
 "set diffexpr=
 "set list
 
