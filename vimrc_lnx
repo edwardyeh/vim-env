@@ -255,66 +255,68 @@ command! -nargs=+ TN tabn <args>
 "========================================
 "=== Highlight Setting ==================
 "========================================
+colorscheme torte
 syntax on
 
 "" Editor
-highlight LineNr            ctermfg=green 
-highlight CursorLineNr      cterm=bold ctermfg=yellow
-highlight StatusLine        cterm=NONE ctermfg=white ctermbg=blue
+highlight LineNr            ctermfg=10 
+highlight CursorLineNr      cterm=bold ctermfg=11
+highlight StatusLine        cterm=NONE ctermfg=15 ctermbg=21
 highlight StatusLineNC      cterm=reverse
 highlight VertSplit         cterm=reverse
-highlight Title             ctermfg=magenta  
-highlight Visual            ctermbg=238 
+highlight Title             ctermfg=13 
+highlight Visual            ctermfg=238 ctermbg=250 
 highlight VisualNOS         cterm=underline 
-highlight Directory         ctermfg=blue
-highlight WildMenu          ctermfg=black ctermbg=yellow 
-highlight Pmenu             ctermbg=magenta 
-highlight PmenuSel          ctermbg=white 
-highlight PmenuSbar         ctermbg=white 
+highlight Directory         ctermfg=32
+highlight WildMenu          ctermfg=0 ctermbg=11
+highlight Pmenu             ctermbg=13
+highlight PmenuSel          ctermbg=15 
+highlight PmenuSbar         ctermbg=15 
 highlight PmenuThumb        cterm=reverse                            
 "" Cursor 
 highlight CursorLine        cterm=NONE ctermbg=234
-highlight CursorColumn      cterm=reverse ctermbg=white 
+highlight CursorColumn      cterm=reverse ctermbg=15 
 "highlight Cursor            ctermfg=bg ctermbg=fg
 "highlight lCursor           ctermfg=bg ctermbg=fg
 "" Message
-highlight ErrorMsg          ctermfg=white ctermbg=red
+highlight ErrorMsg          ctermfg=15 ctermbg=9
 "highlight WarningMsg        ctermfg=darkred 
-highlight WarningMsg        ctermfg=red 
-highlight MoreMsg           ctermfg=green 
-highlight Question          ctermfg=green 
+highlight WarningMsg        ctermfg=124 
+highlight MoreMsg           ctermfg=10 
+highlight Question          ctermfg=10 
 "" Special
 highlight IncSearch         cterm=reverse
-highlight Search            cterm=NONE ctermfg=yellow ctermbg=black 
-highlight MatchParen        cterm=reverse ctermbg=cyan ctermfg=28
+highlight Search            cterm=NONE ctermfg=11 ctermbg=0 
+highlight MatchParen        cterm=reverse ctermbg=14 ctermfg=28
 highlight DiffAdd           ctermbg=17 
 highlight DiffChange        ctermbg=53 
 highlight DiffDelete        cterm=NONE ctermfg=243 ctermbg=234
-highlight DiffText          cterm=NONE ctermbg=52 ctermfg=red 
-highlight Folded            ctermfg=179 ctermbg=black 
-highlight FoldColumn        ctermfg=green ctermbg=black
-highlight SpecialKey        ctermfg=blue
-highlight NonText           ctermfg=blue
-highlight SignColumn        ctermfg=green ctermbg=black 
-highlight SpellBad          cterm=reverse ctermbg=red 
-highlight SpellCap          cterm=reverse ctermbg=blue 
-highlight SpellRare         cterm=reverse ctermbg=magenta 
-highlight SpellLocal        ctermbg=cyan
-highlight TabLine           ctermfg=black ctermbg=white 
+highlight DiffText          cterm=NONE ctermbg=52 ctermfg=9 
+highlight Folded            ctermfg=179 ctermbg=0 
+highlight FoldColumn        ctermfg=10 ctermbg=0
+highlight SpecialKey        ctermfg=21
+highlight NonText           ctermfg=21
+highlight SignColumn        ctermfg=10 ctermbg=0 
+highlight SpellBad          cterm=reverse ctermbg=9 
+highlight SpellCap          cterm=reverse ctermbg=21 
+highlight SpellRare         cterm=reverse ctermbg=13 
+highlight SpellLocal        ctermbg=14
+highlight TabLine           ctermfg=0 ctermbg=15 
 highlight TabLineFill       cterm=reverse 
-highlight Underlined        ctermfg=magenta 
+highlight Underlined        ctermfg=13 
 "" Other
-highlight Ignore            ctermfg=white ctermfg=black
-highlight Error             ctermfg=white ctermbg=red 
-highlight Todo              ctermfg=black ctermbg=yellow 
+highlight Ignore            ctermfg=15 ctermfg=0
+highlight Error             ctermfg=15 ctermbg=9
+highlight Todo              ctermfg=0 ctermbg=11 
 "" General Style
-highlight Comment           ctermfg=DarkGreen
+highlight Normal            ctermfg=250
+highlight Comment           ctermfg=2
 highlight Constant          ctermfg=208
-highlight Special           ctermfg=magenta 
-highlight Identifier        ctermfg=cyan 
-highlight Statement         ctermfg=12
-highlight PreProc           ctermfg=magenta 
-highlight Type              ctermfg=12
+highlight Special           ctermfg=13 
+highlight Identifier        cterm=NONE ctermfg=14 
+highlight Statement         ctermfg=32
+highlight PreProc           ctermfg=13 
+highlight Type              ctermfg=32
 highlight Special           ctermfg=250
 highlight String            ctermfg=1
 "" C/C++ Style
@@ -322,8 +324,8 @@ highlight cStatement        ctermfg=220
 highlight cLabel            ctermfg=220
 highlight cConditional      ctermfg=220
 highlight cRepeat           ctermfg=220
-highlight cType             ctermfg=12
-highlight cStructure        ctermfg=12
-highlight cStorageClass     ctermfg=12
-highlight cshVariables      ctermfg=magenta
+highlight cType             ctermfg=32
+highlight cStructure        ctermfg=32
+highlight cStorageClass     ctermfg=32
+highlight cshVariables      ctermfg=13
 
