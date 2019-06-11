@@ -255,7 +255,7 @@ command! -range -nargs=+ TBF <line1>,<line2>s/<args>/<args><TAB>/g | retab
 command! -range LB  exec <line1>.",".<line2>."TAS (" | <line1>,<line2>s/ (/<TAB>(/g | retab
 command! -range RB  exec <line1>.",".<line2>."TAS )" | <line1>,<line2>s/ )/<TAB>)/g | retab
 command! -range LRB exec <line1>.",".<line2>."LB" | exec <line1>.",".<line2>."RB"
-command! -range DOT <line1>,<line2>s/^ *\(\S\)/<TAB>.\1/g | retab
+command! -range DOT <line1>,<line2>s/^\(  *\)\([0-9a-zA-Z]\)/\1.\2/g | retab
 command! -range DSA <line1>,<line2>s/\(\S\)  *\(\S\)/\1 \2/g
 command! -range VA  exec <line1>.",".<line2>."DSA" | <line1>,<line2>Tab/ /l0
 
