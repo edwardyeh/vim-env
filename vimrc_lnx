@@ -22,6 +22,7 @@ set backspace=2
 set t_Co=256
 set listchars=tab:▷۰,trail:۰,eol:⌋
 set noro
+set laststatus=2
 "set diffexpr=
 "set list
 
@@ -67,6 +68,7 @@ Plugin 'ShowMarks'
 Plugin 'wokmarks.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'godlygeek/tabular'
+Plugin 'itchyny/lightline.vim'
 "Plugin 'winmanager'
 "Plugin 'Lokaltog/vim-powerline'
 "Plugin 'bling/vim-airline'
@@ -74,6 +76,13 @@ Plugin 'godlygeek/tabular'
 call vundle#end()
 filetype on
 filetype plugin on
+
+""=== Powerline     {{{
+"set laststatus=2
+"python3 from powerline.vim import setup as powerline_setup
+"python3 powerline_setup()
+"python3 del powerline_setup
+"}}}
 
 ""=== NERDTree      {{{
 nmap <leader>e :NERDTreeToggle<CR>
