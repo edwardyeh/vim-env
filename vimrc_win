@@ -10,7 +10,7 @@ set showmode
 set autoindent
 set ruler
 set nowrap
-set nohlsearch
+set hlsearch
 set incsearch
 set mouse=a
 set guifont=DejaVu\ Sans\ Mono
@@ -64,7 +64,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vcscommand.vim'
-Plugin 'ShowMarks'
+"Plugin 'ShowMarks'
 Plugin 'wokmarks.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'godlygeek/tabular'
@@ -194,6 +194,8 @@ command! -range -nargs=+ TRFZ <line1>,<line2>Tab/<args>\zs /r0
 command! -range -nargs=+ TCFZ <line1>,<line2>Tab/<args>\zs /c0
 command! -range -nargs=+ TAST exec <line1>.",".<line2>."TAS<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
 command! -range -nargs=+ TADT exec <line1>.",".<line2>."TAD<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
+command! -range          TEQ  exec <line1>.",".<line2>."TAD ="
+command! -range          TCT  exec <line1>.",".<line2>."TAS\/\/" | <line1>,<line2>s/ \/\//<TAB>\/\/ /g | retab
 "}}}
 
 "=== vim-indent-object      {{{
@@ -234,28 +236,42 @@ command! FS     set fdm=syntax
 command! FM     set fdm=marker
 command! SC     set syntax=c
 command! SV     set syntax=verilog
+command! SCS    set syntax=tcsh
+command! SBS    set syntax=bash
 command! VRC    vsp ~/.vimrc
 command! GRC    vsp ~/.gvimrc
 command! DON    set diff scrollbind fdm=diff
 command! DOF    set nodiff noscrollbind fdm=marker
 command! B2H    %!xxd
 
+" Comment
 command! -range -nargs=+ C   <line1>,<line2>s!^\( *.\)!<args>\1!g
 command! -range -nargs=+ CY  <line1>,<line2>s!^\( *\)\(.\)!\1<args>\2!g
 command! -range -nargs=+ CD  <line1>,<line2>s!^\( *\)<args>!\1!g
-command! -range -nargs=+ DSS <line1>,<line2>s/ *\( <args>\)/\1/g
-command! -range -nargs=+ DSF <line1>,<line2>s/\(<args> \) */\1/g
+
+" Delete redundant space
+command! -range -nargs=+ DSS   <line1>,<line2>s/ *\( <args>\)/\1/g
+command! -range -nargs=+ DSD   <line1>,<line2>s/ *\(<args> \) */\1/g
+command! -range -nargs=+ DSF   <line1>,<line2>s/\(<args> \) */\1/g
+command! -range          DST   <line1>,<line2>s/ *$//g
+command! -range          DSA   <line1>,<line2>s/\(\S\)  *\(\S\)/\1 \2/g
+command! -range          VA    exec <line1>.",".<line2>."DSA" | <line1>,<line2>Tab/ /l0
 command! -range -nargs=+ VADSF exec <line1>.",".<line2>."VA" | exec <line1>.",".<line2>."DSF<args>"
+
+" Add Tab
 command! -range -nargs=+ TBS <line1>,<line2>s/<args>/<TAB><args>/g | retab
 command! -range -nargs=+ TBF <line1>,<line2>s/<args>/<args><TAB>/g | retab
 
+" Brackets alignment
 command! -range LB  exec <line1>.",".<line2>."TAS (" | <line1>,<line2>s/ (/<TAB>(/g | retab
 command! -range RB  exec <line1>.",".<line2>."TAS )" | <line1>,<line2>s/ )/<TAB>)/g | retab
 command! -range LRB exec <line1>.",".<line2>."LB" | exec <line1>.",".<line2>."RB"
-command! -range DOT <line1>,<line2>s/^\(  *\)\([0-9a-zA-Z]\)/\1.\2/g | retab
-command! -range DSA <line1>,<line2>s/\(\S\)  *\(\S\)/\1 \2/g
-command! -range VA  exec <line1>.",".<line2>."DSA" | <line1>,<line2>Tab/ /l0
 
+" Verilog
+command! -range DOT <line1>,<line2>s/^\(  *\)\([0-9a-zA-Z]\)/\1.\2/g | retab
+command! -range CA  <line1>,<line2>s+;+; //+g | exec <line1>.",".<line2>."TCT"
+
+" Other
 command! -nargs=+ TN tabn <args>
 
 "========================================
@@ -265,7 +281,7 @@ colorscheme torte
 syntax on
 
 "" Editor
-highlight LineNr            ctermfg=10 
+highlight LineNr            ctermfg=28 
 highlight CursorLineNr      cterm=bold ctermfg=11
 highlight StatusLine        cterm=NONE ctermfg=15 ctermbg=21
 highlight StatusLineNC      cterm=reverse
@@ -275,7 +291,7 @@ highlight Visual            ctermfg=238 ctermbg=250
 highlight VisualNOS         cterm=underline 
 highlight Directory         ctermfg=32
 highlight WildMenu          ctermfg=0 ctermbg=11
-highlight Pmenu             ctermbg=13
+highlight Pmenu             ctermfg=252 ctermbg=13 guibg=Magenta
 highlight PmenuSel          ctermbg=15 
 highlight PmenuSbar         ctermbg=15 
 highlight PmenuThumb        cterm=reverse                            
@@ -315,16 +331,16 @@ highlight Ignore            ctermfg=15 ctermfg=0
 highlight Error             ctermfg=15 ctermbg=9
 highlight Todo              ctermfg=0 ctermbg=11 
 "" General Style
-highlight Normal            ctermfg=250
-highlight Comment           ctermfg=2
+highlight Normal            ctermfg=252
+highlight Comment           ctermfg=34
 highlight Constant          ctermfg=208
-highlight Special           ctermfg=13 
-highlight Identifier        cterm=NONE ctermfg=14 
+highlight Special           ctermfg=252
+highlight Identifier        cterm=none ctermfg=14 
 highlight Statement         ctermfg=32
 highlight PreProc           ctermfg=13 
 highlight Type              ctermfg=32
-highlight Special           ctermfg=250
 highlight String            ctermfg=1
+highlight Define            cterm=none ctermfg=13
 "" C/C++ Style
 highlight cStatement        ctermfg=220
 highlight cLabel            ctermfg=220

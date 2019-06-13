@@ -1,26 +1,30 @@
 "========================================
 "=== Editor Environment =================
 "========================================
-set nocompatible
-set nu
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set showmode
-set autoindent
-set ruler
-set nowrap
-set nohlsearch
-set incsearch
-set guifont=DejaVu\ Sans\ Mono\ 10
-set cursorline
-set sessionoptions-=curdir
-set sessionoptions+=sesdir
-set fdm=marker
-set backspace=2
-set listchars=tab:▷۰,trail:۰,eol:⌋
+"set nocompatible
+"set nu
+"set tabstop=4
+"set shiftwidth=4
+"set expandtab
+"set showmode
+"set autoindent
+"set ruler
+"set nowrap
+"set nohlsearch
+"set incsearch
+"set cursorline
+"set sessionoptions-=curdir
+"set sessionoptions+=sesdir
+"set fdm=marker
+"set backspace=2
+"set listchars=tab:▷۰,trail:۰,eol:⌋
+"set noro
 "set diffexpr=
 "set list
+
+"set encoding=utf-8
+
+set guifont=DejaVu\ Sans\ Mono\ 10
 
 "========================================
 "=== Highlight Setting ==================
