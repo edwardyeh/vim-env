@@ -6,7 +6,7 @@ set nu
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set showmode
+"set showmode
 set autoindent
 set ruler
 set nowrap
@@ -69,6 +69,7 @@ Plugin 'wokmarks.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'itchyny/lightline.vim'
+Plugin 'gcmt/taboo.vim'
 "Plugin 'winmanager'
 "Plugin 'Lokaltog/vim-powerline'
 "Plugin 'bling/vim-airline'
@@ -230,6 +231,16 @@ endfunction
 nmap <leader>ws <ESC>:call IDEOpen()<CR>
 nmap <leader>wc <ESC>:call IDEClose()<CR>
 nmap <leader>wt <ESC>:call IDEToggle()<CR>
+"}}}
+
+"=== Lightline  {{{
+set noshowmode
+let g:lightline = {
+    \   'inactive': {
+    \       'left':   [ ['readonly', 'filename', 'modified'] ],
+    \       'right':  [ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
+    \   },
+    \ }
 "}}}
 
 "========================================
