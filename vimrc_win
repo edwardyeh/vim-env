@@ -43,7 +43,7 @@ au BufNewFile,BufRead .vim,.vimrc setf vim
 "========================================
 "=== Plugin Setting =====================
 "========================================
-""=== Vundle
+""=== Vundle        {{{
 set nocompatible
 filetype off
 set rtp+=~/vimfiles/bundle/Vundle.vim
@@ -74,6 +74,7 @@ Plugin 'itchyny/lightline.vim'
 call vundle#end()
 filetype on
 filetype plugin on
+"}}}
 
 ""=== Powerline     {{{
 "set laststatus=2
@@ -91,7 +92,7 @@ nmap <leader>e :NERDTreeToggle<CR>
 "}}}
 
 ""=== Ctags         {{{
-let Tlist_Ctags_Cmd = 'D:\Software\Editor\GVim\Plugin\ctags58\ctags.exe'
+let Tlist_Ctags_Cmd = 'C:\Users\Public\Software\ctags58\ctags.exe'
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "}}}
 
@@ -115,7 +116,7 @@ let b:match_words = "`ifdef:`endif,begin:end,module:endmodule"
 "}}}
  
 ""=== Tagbar        {{{
-let g:tagbar_ctags_bin = 'D:\Software\Editor\GVim\Plugin\ctags58\ctags.exe'
+let g:tagbar_ctags_bin = 'C:\Users\Public\Software\ctags58\ctags.exe'
 let g:tagbar_left = 1
 let g:tagbar_autofocus = 1
 highlight link TagbarSignature Constant
@@ -225,6 +226,16 @@ endfunction
 nmap <leader>ws <ESC>:call IDEOpen()<CR>
 nmap <leader>wc <ESC>:call IDEClose()<CR>
 nmap <leader>wt <ESC>:call IDEToggle()<CR>
+"}}}
+
+"=== Lightline  {{{
+set noshowmode
+let g:lightline = {
+    \   'inactive': {
+    \       'left':   [ ['readonly', 'filename', 'modified'] ],
+    \       'right':  [ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
+    \   },
+    \ }
 "}}}
 
 "========================================

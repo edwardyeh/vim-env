@@ -6,7 +6,7 @@ set nu
 set tabstop=4
 set shiftwidth=4
 set expandtab
-"set showmode
+set showmode
 set autoindent
 set ruler
 set nowrap
@@ -34,8 +34,6 @@ set encoding=utf-8
 "set fileencoding=utf-8
 "set fileencodings=ansi,japan,korea,chinese,taiwan,utf-8
 "set termencoding=utf-8
-
-"language messages utf-8
 
 "========================================
 "=== Add Syntax =========================
