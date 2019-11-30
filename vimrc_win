@@ -92,7 +92,12 @@ nmap <leader>e :NERDTreeToggle<CR>
 "}}}
 
 ""=== Ctags         {{{
-let Tlist_Ctags_Cmd = 'C:\Users\Public\Software\ctags58\ctags.exe'
+if $MSYSTEM != ""
+    let Tlist_Ctags_Cmd = '/c/Users/Public/Software/ctags58/ctags.exe'
+else
+    let Tlist_Ctags_Cmd = 'C:\Users\Public\Software\ctags58\ctags.exe'
+endif
+
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "}}}
 
@@ -116,7 +121,12 @@ let b:match_words = "`ifdef:`endif,begin:end,module:endmodule"
 "}}}
  
 ""=== Tagbar        {{{
-let g:tagbar_ctags_bin = 'C:\Users\Public\Software\ctags58\ctags.exe'
+if $MSYSTEM != ""
+    let g:tagbar_ctags_bin = '/c/Users/Public/Software/ctags58/ctags.exe'
+else
+    let g:tagbar_ctags_bin = 'C:\Users\Public\Software\ctags58\ctags.exe'
+endif
+
 let g:tagbar_left = 1
 let g:tagbar_autofocus = 1
 highlight link TagbarSignature Constant
