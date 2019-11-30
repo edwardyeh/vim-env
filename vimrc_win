@@ -93,9 +93,9 @@ nmap <leader>e :NERDTreeToggle<CR>
 
 ""=== Ctags         {{{
 if $MSYSTEM != ""
-    let Tlist_Ctags_Cmd = '/c/Users/Public/Software/ctags58/ctags.exe'
+    let Tlist_Ctags_Cmd = '/c/Users/Public/DevKit/Vim/ctags58/ctags.exe'
 else
-    let Tlist_Ctags_Cmd = 'C:\Users\Public\Software\ctags58\ctags.exe'
+    let Tlist_Ctags_Cmd = 'C:\Users\Public\DevKit\Vim\ctags58\ctags.exe'
 endif
 
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -122,9 +122,9 @@ let b:match_words = "`ifdef:`endif,begin:end,module:endmodule"
  
 ""=== Tagbar        {{{
 if $MSYSTEM != ""
-    let g:tagbar_ctags_bin = '/c/Users/Public/Software/ctags58/ctags.exe'
+    let g:tagbar_ctags_bin = '/c/Users/Public/DevKit/Vim/ctags58/ctags.exe'
 else
-    let g:tagbar_ctags_bin = 'C:\Users\Public\Software\ctags58\ctags.exe'
+    let g:tagbar_ctags_bin = 'C:\Users\Public\DevKit\Vim\ctags58\ctags.exe'
 endif
 
 let g:tagbar_left = 1
