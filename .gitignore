@@ -1,5 +1,3 @@
-vimrc
-gvimrc
 .netrwhist
 *.swp
 bundle/ctrlp.vim/
