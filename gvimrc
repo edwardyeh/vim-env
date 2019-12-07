@@ -30,6 +30,8 @@ if has('win32') && !has('win32unix')
     "source $VIMRUNTIME/delmenu.vim
     "source $VIMRUNTIME/menu.vim
 
+    set shell=C:\Windows\system32\cmd.exe
+    set shellcmdflag=/c
     set guifont=DejaVu\ Sans\ Mono:h10
 else
     set guifont=DejaVu\ Sans\ Mono\ 10
