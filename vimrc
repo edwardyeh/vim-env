@@ -205,22 +205,22 @@ map <leader>et <ESC>:MBEToggle<CR>
 "}}}
 
 "=== Tabular        {{{
-command! -range -nargs=+ TA <line1>,<line2>Tab/<args>/l0
-command! -range -nargs=+ TR <line1>,<line2>Tab/<args>/r0
-command! -range -nargs=+ TC <line1>,<line2>Tab/<args>/c0
-command! -range -nargs=+ TAS <line1>,<line2>Tab/ <args>/l0
-command! -range -nargs=+ TRS <line1>,<line2>Tab/ <args>/r0
-command! -range -nargs=+ TCS <line1>,<line2>Tab/ <args>/c0
-command! -range -nargs=+ TAF <line1>,<line2>Tab/<args> /l0
-command! -range -nargs=+ TRF <line1>,<line2>Tab/<args> /r0
-command! -range -nargs=+ TCF <line1>,<line2>Tab/<args> /c0
-command! -range -nargs=+ TAD <line1>,<line2>Tab/ <args> /l0
-command! -range -nargs=+ TRD <line1>,<line2>Tab/ <args> /r0
-command! -range -nargs=+ TCD <line1>,<line2>Tab/ <args> /c0
-command! -range -nargs=+ TAZ  <line1>,<line2>Tab/<args>\zs/c0
-command! -range -nargs=+ TAFZ <line1>,<line2>Tab/<args>\zs /l0
-command! -range -nargs=+ TRFZ <line1>,<line2>Tab/<args>\zs /r0
-command! -range -nargs=+ TCFZ <line1>,<line2>Tab/<args>\zs /c0
+command! -range -nargs=+ TA <line1>,<line2>Tabularize/<args>/l0
+command! -range -nargs=+ TR <line1>,<line2>Tabularize/<args>/r0
+command! -range -nargs=+ TC <line1>,<line2>Tabularize/<args>/c0
+command! -range -nargs=+ TAS <line1>,<line2>Tabularize/ <args>/l0
+command! -range -nargs=+ TRS <line1>,<line2>Tabularize/ <args>/r0
+command! -range -nargs=+ TCS <line1>,<line2>Tabularize/ <args>/c0
+command! -range -nargs=+ TAF <line1>,<line2>Tabularize/<args> /l0
+command! -range -nargs=+ TRF <line1>,<line2>Tabularize/<args> /r0
+command! -range -nargs=+ TCF <line1>,<line2>Tabularize/<args> /c0
+command! -range -nargs=+ TAD <line1>,<line2>Tabularize/ <args> /l0
+command! -range -nargs=+ TRD <line1>,<line2>Tabularize/ <args> /r0
+command! -range -nargs=+ TCD <line1>,<line2>Tabularize/ <args> /c0
+command! -range -nargs=+ TAZ  <line1>,<line2>Tabularize/<args>\zs/c0
+command! -range -nargs=+ TAFZ <line1>,<line2>Tabularize/<args>\zs /l0
+command! -range -nargs=+ TRFZ <line1>,<line2>Tabularize/<args>\zs /r0
+command! -range -nargs=+ TCFZ <line1>,<line2>Tabularize/<args>\zs /c0
 command! -range -nargs=+ TAST exec <line1>.",".<line2>."TAS<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
 command! -range -nargs=+ TADT exec <line1>.",".<line2>."TAD<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
 command! -range          TEQ  exec <line1>.",".<line2>."TAD ="
@@ -294,7 +294,7 @@ command! -range -nargs=+ DSD   <line1>,<line2>s/ *\(<args> \) */\1/g
 command! -range -nargs=+ DSF   <line1>,<line2>s/\(<args> \) */\1/g
 command! -range          DST   <line1>,<line2>s/ *$//g
 command! -range          DSA   <line1>,<line2>s/\(\S\)  *\(\S\)/\1 \2/g
-command! -range          VA    exec <line1>.",".<line2>."DSA" | <line1>,<line2>Tab/ /l0
+command! -range          VA    exec <line1>.",".<line2>."DSA" | <line1>,<line2>Tabularize/ /l0
 command! -range -nargs=+ VADSF exec <line1>.",".<line2>."VA" | exec <line1>.",".<line2>."DSF<args>"
 
 " Add Tab
