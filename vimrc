@@ -316,7 +316,8 @@ command! -nargs=+ TN tabn <args>
 "========================================
 "=== Highlight Setting ==================
 "========================================
-colorscheme torte
+"colorscheme torte
+colorscheme default
 syntax on
 
 "" Editor
@@ -374,9 +375,9 @@ highlight Normal            ctermfg=252
 highlight Comment           ctermfg=34
 highlight Constant          ctermfg=208
 highlight Special           ctermfg=252
-highlight Identifier        cterm=none ctermfg=14 
+highlight Identifier        cterm=none ctermfg=51 
 highlight Statement         ctermfg=32
-highlight PreProc           ctermfg=13 
+highlight PreProc           ctermfg=164
 highlight Type              ctermfg=32
 highlight String            ctermfg=1
 highlight Define            cterm=none ctermfg=13
