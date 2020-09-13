@@ -306,9 +306,13 @@ command! -range LB  exec <line1>.",".<line2>."TAS (" | <line1>,<line2>s/ (/<TAB>
 command! -range RB  exec <line1>.",".<line2>."TAS )" | <line1>,<line2>s/ )/<TAB>)/g | retab
 command! -range LRB exec <line1>.",".<line2>."LB" | exec <line1>.",".<line2>."RB"
 
-" Verilog
+" Verilog - dot add
 command! -range DOT <line1>,<line2>s/^\(  *\)\([0-9a-zA-Z]\)/\1.\2/g | retab
+" Verilog - comment add
 command! -range CA  <line1>,<line2>s+;+; //+g | exec <line1>.",".<line2>."TCT"
+" Verilog - input/output tag add
+command! -range ITA <line1>,<line2>s+,+, // (I)+g
+command! -range OTA <line1>,<line2>s+,+, // (O)+g
 
 " Other
 command! -nargs=+ TN tabn <args>
