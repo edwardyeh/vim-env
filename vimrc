@@ -277,6 +277,7 @@ command! SC     set syntax=c
 command! SV     set syntax=verilog
 command! SCS    set syntax=tcsh
 command! SBS    set syntax=bash
+command! STC    set syntax=tcl
 command! VRC    vsp ~/.vimrc
 command! GRC    vsp ~/.gvimrc
 command! DON    set diff scrollbind fdm=diff
@@ -284,35 +285,38 @@ command! DOF    set nodiff noscrollbind fdm=marker
 command! B2H    %!xxd
 
 " Comment
-command! -range -nargs=+ C   <line1>,<line2>s!^\( *.\)!<args>\1!g
-command! -range -nargs=+ CY  <line1>,<line2>s!^\( *\)\(.\)!\1<args>\2!g
-command! -range -nargs=+ CD  <line1>,<line2>s!^\( *\)<args>!\1!g
+command! -range -nargs=+ C   <line1>,<line2>s!^\( *.\)!<args>\1!g | noh
+command! -range -nargs=+ CY  <line1>,<line2>s!^\( *\)\(.\)!\1<args>\2!g | noh
+command! -range -nargs=+ CD  <line1>,<line2>s!^\( *\)<args>!\1!g | noh
 
 " Delete redundant space
-command! -range -nargs=+ DSS   <line1>,<line2>s/ *\( <args>\)/\1/g
-command! -range -nargs=+ DSD   <line1>,<line2>s/ *\(<args> \) */\1/g
-command! -range -nargs=+ DSF   <line1>,<line2>s/\(<args> \) */\1/g
-command! -range          DST   <line1>,<line2>s/ *$//g
-command! -range          DSA   <line1>,<line2>s/\(\S\)  *\(\S\)/\1 \2/g
-command! -range          VA    exec <line1>.",".<line2>."DSA" | <line1>,<line2>Tabularize/ /l0
-command! -range -nargs=+ VADSF exec <line1>.",".<line2>."VA" | exec <line1>.",".<line2>."DSF<args>"
+command! -range -nargs=+ DSS   <line1>,<line2>s/ *\( <args>\)/\1/g | noh
+command! -range -nargs=+ DSD   <line1>,<line2>s/ *\(<args> \) */\1/g | noh
+command! -range -nargs=+ DSF   <line1>,<line2>s/\(<args> \) */\1/g | noh
+command! -range          DST   <line1>,<line2>s/ *$//g | noh
+command! -range          DSA   <line1>,<line2>s/\(\S\)  *\(\S\)/\1 \2/g | noh
+command! -range          VA    exec <line1>.",".<line2>."DSA" | <line1>,<line2>Tabularize/ /l0 | noh
+command! -range -nargs=+ VADSF exec <line1>.",".<line2>."VA" | exec <line1>.",".<line2>."DSF<args>" | noh
 
 " Add Tab
-command! -range -nargs=+ TBS <line1>,<line2>s/<args>/<TAB><args>/g | retab
-command! -range -nargs=+ TBF <line1>,<line2>s/<args>/<args><TAB>/g | retab
+command! -range -nargs=+ TBS <line1>,<line2>s/<args>/<TAB><args>/g | retab | noh
+command! -range -nargs=+ TBF <line1>,<line2>s/<args>/<args><TAB>/g | retab | noh
 
 " Brackets alignment
+command! -range ANU <line1>,<line2>s/( *)/(xx )/g
+command! -range DNU <line1>,<line2>s/(xx/(  /g
+
 command! -range LB  exec <line1>.",".<line2>."TAS (" | <line1>,<line2>s/ (/<TAB>(/g | retab
 command! -range RB  exec <line1>.",".<line2>."TAS )" | <line1>,<line2>s/ )/<TAB>)/g | retab
-command! -range LRB exec <line1>.",".<line2>."LB" | exec <line1>.",".<line2>."RB"
+command! -range LRB silent! exec <line1>.",".<line2>."ANU" | exec <line1>.",".<line2>."LB" | exec <line1>.",".<line2>."RB" | silent! exec <line1>.",".<line2>."DNU" 
 
 " Verilog - dot add
-command! -range DOT <line1>,<line2>s/^\(  *\)\([0-9a-zA-Z]\)/\1.\2/g | retab
+command! -range DOT <line1>,<line2>s/^\(  *\)\([0-9a-zA-Z]\)/\1.\2/g | retab | noh
 " Verilog - comment add
-command! -range CA  <line1>,<line2>s+;+; //+g | exec <line1>.",".<line2>."TCT"
+command! -range CA  <line1>,<line2>s+;+; //+g | exec <line1>.",".<line2>."TCT" | noh
 " Verilog - input/output tag add
-command! -range ITA <line1>,<line2>s+,+, // (I)+g
-command! -range OTA <line1>,<line2>s+,+, // (O)+g
+command! -range ITA <line1>,<line2>s+,+, // (I)+g | noh
+command! -range OTA <line1>,<line2>s+,+, // (O)+g | noh
 
 " Other
 command! -nargs=+ TN tabn <args>
