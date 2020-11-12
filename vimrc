@@ -356,7 +356,7 @@ highlight MoreMsg           ctermfg=10
 highlight Question          ctermfg=10 
 "" Special
 highlight IncSearch         cterm=reverse
-highlight Search            cterm=NONE ctermfg=11 ctermbg=0 
+highlight Search            cterm=NONE ctermfg=11 ctermbg=none 
 highlight MatchParen        cterm=reverse ctermbg=14 ctermfg=28
 highlight DiffAdd           ctermbg=17 
 highlight DiffChange        ctermbg=53 
