@@ -362,8 +362,10 @@ highlight DiffAdd           ctermbg=17
 highlight DiffChange        ctermbg=53 
 highlight DiffDelete        cterm=NONE ctermfg=243 ctermbg=234
 highlight DiffText          cterm=NONE ctermbg=52 ctermfg=9 
-highlight Folded            ctermfg=179 ctermbg=0 
-highlight FoldColumn        ctermfg=10 ctermbg=0
+"highlight Folded            ctermfg=179 ctermbg=0 
+"highlight FoldColumn        ctermfg=10 ctermbg=0
+highlight Folded            ctermfg=179 ctermbg=none 
+highlight FoldColumn        ctermfg=10 ctermbg=none
 highlight SpecialKey        ctermfg=21
 highlight NonText           ctermfg=21
 highlight SignColumn        ctermfg=10 ctermbg=0 
