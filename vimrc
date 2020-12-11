@@ -65,26 +65,26 @@ au BufNewFile,BufRead .vim,.vimrc setf vim
 "========================================
 "=== Plugin Setting =====================
 "========================================
-""=== Vim-Plug  {{{
+""=== Vim-Plug      {{{
 call plug#begin('~/.vim/plugged')
-    Plug 'vim-plugins/nerdtree'
+    Plug 'vim-plugins/nerdtree', {'on': 'NERDTreeToggle'}
     Plug 'vim-scripts/ctags.vim'
     Plug 'chazy/cscope_maps'
     Plug 'kien/ctrlp.vim'
-    Plug 'will133/vim-dirdiff'
+    Plug 'will133/vim-dirdiff', {'on': 'DirDiff'}
     Plug 'vim-scripts/matchit.zip'
     Plug 'tpope/vim-surround'
-    Plug 'majutsushi/tagbar'
-    "Plug 'vim-scripts/taglist.vim'
+    Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
+    "Plug 'vim-scripts/taglist.vim', {'on': 'TlistToggle'}
     Plug 'michaeljsmith/vim-indent-object'
+    Plug 'fholgado/minibufexpl.vim', {'on': 'MBEToggle'}
+    Plug 'godlygeek/tabular'
     Plug 'scrooloose/nerdcommenter'
+    Plug 'itchyny/lightline.vim'
+    "Plug 'vim-scriots/winmanager', {'on': 'WMToggle'}
+    Plug 'gcmt/taboo.vim'
     Plug 'vim-scripts/vcscommand.vim'
     Plug 'vim-scripts/wokmarks.vim'
-    Plug 'fholgado/minibufexpl.vim'
-    Plug 'godlygeek/tabular'
-    Plug 'itchyny/lightline.vim'
-    Plug 'gcmt/taboo.vim'
-    "Plug 'vim-scriots/winmanager'
 call plug#end()
 "}}}
 
@@ -176,23 +176,9 @@ map <leader>t <ESC>:TagbarToggle<CR>
 "let Tlist_Exit_OnlyWindow=1
 "}}}
 
-""=== ShowMarks     {{{
-let g:showmarks_enable=0
-"}}}
-
-""=== SrcExpl       {{{
-"" active/unactive order:SrcExplToggle
-"map <leader>s <ESC>:SrcExplToggle<CR>
-"}}}
-
-""=== OmniCppComplete   {{{
-"set nocp
-"" filetype plugin on
-"}}}
-
-""=== SuperTab      {{{
-"" hot key: <Tab>
-" let g:SuperTabDefaultCompletionType="context"
+"=== vim-indent-object      {{{
+" vii   indent select
+" vai   indent select include upper one level
 "}}}
 
 ""=== MiniBufExplorer   {{{
@@ -203,21 +189,6 @@ let g:miniBufExplModSelTarget = 1
 let g:miniBufExplMoreThanOne=0
 let g:miniBufExplorerAutoStart = 0
 map <leader>et <ESC>:MBEToggle<CR>
-"}}}
-
-""=== Winmanager    {{{
-"let g:NERDTree_title="[NERDTree]"
-"let g:winManagerWindowLayout="NERDTree|TagList"
-"
-"function! NERDTree_Start()
-"    exec 'NERDTree'
-"endfunction
-"
-"function! NERDTree_IsValid()
-"    return 1
-"endfunction
-"
-"nmap wm :WMToggle<CR>
 "}}}
 
 "=== Tabular        {{{
@@ -243,15 +214,35 @@ command! -range          TEQ  exec <line1>.",".<line2>."TAD ="
 command! -range          TCT  exec <line1>.",".<line2>."TAS\/\/" | <line1>,<line2>s/ \/\//<TAB>\/\/ /g | retab
 "}}}
 
-"=== vim-indent-object      {{{
-" vii   indent select
-" vai   indent select include upper one level
-"}}}
-
 "=== NERD commenter     {{{
 let g:NERDCustomDelimiters = {
     \ 'vim': { 'left': '"', 'leftAlt': '"', 'rightAlt': '"' },
 \ }
+"}}}
+
+"=== Lightline  {{{
+set noshowmode
+let g:lightline = {
+    \   'inactive': {
+    \       'left':   [ ['readonly', 'filename', 'modified'] ],
+    \       'right':  [ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
+    \   },
+    \ }
+"}}}
+
+""=== Winmanager    {{{
+"let g:NERDTree_title="[NERDTree]"
+"let g:winManagerWindowLayout="NERDTree|TagList"
+"
+"function! NERDTree_Start()
+"    exec 'NERDTree'
+"endfunction
+"
+"function! NERDTree_IsValid()
+"    return 1
+"endfunction
+"
+"nmap wm :WMToggle<CR>
 "}}}
 
 "=== IDE Setting    {{{
@@ -272,16 +263,6 @@ endfunction
 nmap <leader>ws <ESC>:call IDEOpen()<CR>
 nmap <leader>wc <ESC>:call IDEClose()<CR>
 nmap <leader>wt <ESC>:call IDEToggle()<CR>
-"}}}
-
-"=== Lightline  {{{
-set noshowmode
-let g:lightline = {
-    \   'inactive': {
-    \       'left':   [ ['readonly', 'filename', 'modified'] ],
-    \       'right':  [ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
-    \   },
-    \ }
 "}}}
 
 "========================================
