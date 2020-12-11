@@ -65,49 +65,65 @@ au BufNewFile,BufRead .vim,.vimrc setf vim
 "========================================
 "=== Plugin Setting =====================
 "========================================
-""=== Vundle        {{{
-set nocompatible
-filetype off
-let s:bundle_path = '~/'.s:vimfiles_dir.'/bundle/'
-let &rtp = &rtp.','.s:bundle_path.'Vundle.vim'
-call vundle#begin(s:bundle_path)
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'vim-plugins/nerdtree'
-Plugin 'ctags.vim'
-Plugin 'chazy/cscope_maps'
-Plugin 'kien/ctrlp.vim'
-Plugin 'will133/vim-dirdiff'
-Plugin 'matchit.zip'
-Plugin 'tpope/vim-surround'
-Plugin 'majutsushi/tagbar'
-"Plugin 'taglist.vim'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'vcscommand.vim'
-Plugin 'wokmarks.vim'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'itchyny/lightline.vim'
-Plugin 'gcmt/taboo.vim'
-"Plugin 'winmanager'
-"Plugin 'Lokaltog/vim-powerline'
-"Plugin 'bling/vim-airline'
-
-if !has('win32') && !has('win32unix')
-    Plugin 'ShowMarks'
-endif
-
-call vundle#end()
-filetype on
-filetype plugin on
+""=== Vim-Plug  {{{
+call plug#begin('~/.vim/plugged')
+    Plug 'vim-plugins/nerdtree'
+    Plug 'vim-scripts/ctags.vim'
+    Plug 'chazy/cscope_maps'
+    Plug 'kien/ctrlp.vim'
+    Plug 'will133/vim-dirdiff'
+    Plug 'vim-scripts/matchit.zip'
+    Plug 'tpope/vim-surround'
+    Plug 'majutsushi/tagbar'
+    "Plug 'vim-scripts/taglist.vim'
+    Plug 'michaeljsmith/vim-indent-object'
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'vim-scripts/vcscommand.vim'
+    Plug 'vim-scripts/wokmarks.vim'
+    Plug 'fholgado/minibufexpl.vim'
+    Plug 'godlygeek/tabular'
+    Plug 'itchyny/lightline.vim'
+    Plug 'gcmt/taboo.vim'
+    "Plug 'vim-scriots/winmanager'
+call plug#end()
 "}}}
 
-""=== Powerline     {{{
-"set laststatus=2
-"python3 from powerline.vim import setup as powerline_setup
-"python3 powerline_setup()
-"python3 del powerline_setup
+""=== Vundle        {{{
+"set nocompatible
+"filetype off
+"let s:bundle_path = '~/'.s:vimfiles_dir.'/bundle/'
+"let &rtp = &rtp.','.s:bundle_path.'Vundle.vim'
+"call vundle#begin(s:bundle_path)
+
+"Plugin 'gmarik/Vundle.vim'
+"Plugin 'vim-plugins/nerdtree'
+"Plugin 'ctags.vim'
+"Plugin 'chazy/cscope_maps'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'will133/vim-dirdiff'
+"Plugin 'matchit.zip'
+"Plugin 'tpope/vim-surround'
+"Plugin 'majutsushi/tagbar'
+""Plugin 'taglist.vim'
+"Plugin 'michaeljsmith/vim-indent-object'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'vcscommand.vim'
+"Plugin 'wokmarks.vim'
+"Plugin 'fholgado/minibufexpl.vim'
+"Plugin 'godlygeek/tabular'
+"Plugin 'itchyny/lightline.vim'
+"Plugin 'gcmt/taboo.vim'
+""Plugin 'winmanager'
+""Plugin 'Lokaltog/vim-powerline'
+""Plugin 'bling/vim-airline'
+
+"if !has('win32') && !has('win32unix')
+"    Plugin 'ShowMarks'
+"endif
+
+"call vundle#end()
+"filetype on
+"filetype plugin on
 "}}}
 
 ""=== NERDTree      {{{
