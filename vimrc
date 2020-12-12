@@ -54,11 +54,32 @@ call plug#begin('~/.vim/plugged')
     Plug 'gcmt/taboo.vim'
     Plug 'vim-scripts/vcscommand.vim'
     Plug 'vim-scripts/wokmarks.vim'
+    "Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 "========================================
 "=== Plugin Setting =====================
 "========================================
+"=== IDE Setting    {{{
+function IDEOpen ()
+    exec "MBEOpen"
+    exec "NERDTree"
+endfunction
+
+function IDEClose ()
+    exec "MBEClose"
+    exec "NERDTreeClose"
+endfunction
+function IDEToggle ()
+    exec "MBEToggle"
+    exec "NERDTreeToggle"
+endfunction
+
+nmap <leader>ws <ESC>:call IDEOpen()<CR>
+nmap <leader>wc <ESC>:call IDEClose()<CR>
+nmap <leader>wt <ESC>:call IDEToggle()<CR>
+"}}}
+
 "=== NERDTree      {{{
 nmap <leader>e :NERDTreeToggle<CR>
 "nmap <C-a> <C-w><Left>
@@ -178,23 +199,31 @@ let g:NERDCustomDelimiters = {
 "nmap wm :WMToggle<CR>
 "}}}
 
-"=== IDE Setting    {{{
-function IDEOpen ()
-    exec "MBEOpen"
-    exec "NERDTree"
-endfunction
+"=== YouCompleteMe  {{{
+" let g:ycm_python_binary_path = '/usr/bin/python3'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+" let g:ycm_confirm_extra_conf = 0
 
-function IDEClose ()
-    exec "MBEClose"
-    exec "NERDTreeClose"
-endfunction
-function IDEToggle ()
-    exec "MBEToggle"
-    exec "NERDTreeToggle"
-endfunction
+" let g:ycm_add_preview_to_completeopt = 0
+" set completeopt-=preview
 
-nmap <leader>ws <ESC>:call IDEOpen()<CR>
-nmap <leader>wc <ESC>:call IDEClose()<CR>
-nmap <leader>wt <ESC>:call IDEToggle()<CR>
+" nnoremap <c-k> :YcmCompleter GoToDeclaration<CR>|
+" nnoremap <c-h> :YcmCompleter GoToDefinition<CR>|
+" nnoremap <c-j> :YcmCompleter GoToDefinitionElseDeclaration<CR>|
+
+" let g:ycm_seed_identifiers_with_syntax = 1
+" let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_min_num_of_chars_for_completion=2
+" let g:ycm_complete_in_comments = 1
+" let g:ycm_complete_in_strings = 1
+" let g:ycm_collect_identifiers_from_comments_and_strings = 1
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" "let g:ycm_key_invoke_completion = ['<C-Space>']
+" let g:ycm_key_list_stop_completion = ['<C-y>']
+" let g:ycm_semantic_triggers =  {
+" \   'c,cpp,python,java,go,erlang,perl':['re!\w{2}'],
+" \   'cs,lua,javascript':['re!\w{2}'],
+" \}
 "}}}
 
