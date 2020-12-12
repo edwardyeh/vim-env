@@ -35,9 +35,12 @@ exec "source ".s:vimcfg_path."/comm-vim-env/vimrc"
 ""=== Vim-Plug
 call plug#begin('~/.vim/plugged')
     Plug 'vim-plugins/nerdtree', {'on': 'NERDTreeToggle'}
+    Plug 'itchyny/lightline.vim'
     Plug 'vim-scripts/ctags.vim'
     Plug 'chazy/cscope_maps'
-    Plug 'kien/ctrlp.vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
+    Plug 'junegunn/fzf.vim'
+    "Plug 'kien/ctrlp.vim'
     Plug 'will133/vim-dirdiff', {'on': 'DirDiff'}
     Plug 'vim-scripts/matchit.zip'
     Plug 'tpope/vim-surround'
@@ -47,7 +50,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'fholgado/minibufexpl.vim', {'on': 'MBEToggle'}
     Plug 'godlygeek/tabular'
     Plug 'scrooloose/nerdcommenter'
-    Plug 'itchyny/lightline.vim'
     "Plug 'vim-scriots/winmanager', {'on': 'WMToggle'}
     Plug 'gcmt/taboo.vim'
     Plug 'vim-scripts/vcscommand.vim'
@@ -57,7 +59,7 @@ call plug#end()
 "========================================
 "=== Plugin Setting =====================
 "========================================
-""=== NERDTree      {{{
+"=== NERDTree      {{{
 nmap <leader>e :NERDTreeToggle<CR>
 "nmap <C-a> <C-w><Left>
 "nmap <C-s> <C-w><Right>
@@ -65,18 +67,28 @@ nmap <leader>e :NERDTreeToggle<CR>
 "nmap <C-f> <C-w><Down>
 "}}}
 
-""=== Ctags         {{{
+"=== Lightline  {{{
+set noshowmode
+let g:lightline = {
+    \   'inactive': {
+    \       'left':   [ ['readonly', 'filename', 'modified'] ],
+    \       'right':  [ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
+    \   },
+    \ }
+"}}}
+
+"=== Ctags         {{{
 let Tlist_Ctags_Cmd = s:ctags_bin
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "}}}
 
-""=== Cscope        {{{
-"" open database: cs add path/xxx.out
-"" Hot key: Ctrl-s, Ctrl-c, cw
+"=== Cscope        {{{
+" open database: cs add path/xxx.out
+" Hot key: Ctrl-s, Ctrl-c, cw
 set cscopequickfix=s-,c-,d-,i-,t-,e- 
 "}}}
 
-""=== CtrlP         {{{
+"=== CtrlP         {{{
 let g:ctrlp_map = ',,'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 1000000
@@ -84,15 +96,15 @@ let g:ctrlp_user_command = s:find_bin.' %s -type f'
 map ,. <ESC>:CtrlP .<CR>
 "}}}
 
-""=== DirDiff       {{{
+"=== DirDiff       {{{
 let g:DirDiffExcludes = "CVS,*.svn,*.git,*.swp,tags"
 "}}}
 
-""=== Matchit       {{{
+"=== Matchit       {{{
 let b:match_words = "`ifdef:`endif,begin:end,module:endmodule"
 "}}}
  
-""=== Tagbar        {{{
+"=== Tagbar        {{{
 let g:tagbar_ctags_bin = s:ctags_bin
 let g:tagbar_left = 1
 let g:tagbar_autofocus = 1
@@ -100,8 +112,8 @@ highlight link TagbarSignature Constant
 map <leader>t <ESC>:TagbarToggle<CR>
 "}}}
 
-""=== Taglist       {{{
-"" active/unactive order:TlistToggle
+"=== Taglist       {{{
+" active/unactive order:TlistToggle
 "map <leader>t <ESC>:TlistToggle<CR>
 "let Tlist_Show_One_File=1
 "let Tlist_Exit_OnlyWindow=1
@@ -112,7 +124,7 @@ map <leader>t <ESC>:TagbarToggle<CR>
 " vai   indent select include upper one level
 "}}}
 
-""=== MiniBufExplorer   {{{
+"=== MiniBufExplorer   {{{
 let g:miniBufExplMapWindowNavVim = 1 
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1 
@@ -151,17 +163,7 @@ let g:NERDCustomDelimiters = {
 \ }
 "}}}
 
-"=== Lightline  {{{
-set noshowmode
-let g:lightline = {
-    \   'inactive': {
-    \       'left':   [ ['readonly', 'filename', 'modified'] ],
-    \       'right':  [ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'] ],
-    \   },
-    \ }
-"}}}
-
-""=== Winmanager    {{{
+"=== Winmanager    {{{
 "let g:NERDTree_title="[NERDTree]"
 "let g:winManagerWindowLayout="NERDTree|TagList"
 "

@@ -1,0 +1,25 @@
+#!/bin/bash
+## +FHDR=======================================================================
+## Copyright (c) 2020 Hsin-Hsien Yeh (Edward Yeh).
+## All rights reserved.
+## ----------------------------------------------------------------------------
+## Filename         : update-loc-inst-pkg
+## File Description : 
+## ----------------------------------------------------------------------------
+## Author           : Edward Yeh
+## Created On       : Sat 12 Dec 2020 06:27:20 PM CST
+## Format           : Shell script
+## ----------------------------------------------------------------------------
+## Reuse Issues     : 
+## ----------------------------------------------------------------------------
+## Release History  : 
+## -FHDR=======================================================================
+
+alias acalc='function func { awk "BEGIN{ print $* }"; }; func'
+
+rm -rf local-install.tar.xz
+
+tar Jcvf local-install.tar.xz \
+    autoload/vim-plug/ plugged/ \
+    bundle/ \
+    comm-vim-env/
