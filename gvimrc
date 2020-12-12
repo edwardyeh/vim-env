@@ -33,7 +33,8 @@ highlight Visual            gui=reverse
 highlight VisualNOS         gui=underline 
 highlight Directory         guifg=#3c8ad9
 highlight WildMenu          guifg=black guibg=yellow 
-highlight Pmenu             guibg=magenta 
+"highlight Pmenu             guibg=magenta 
+highlight Pmenu             guibg=#87005f
 highlight PmenuSel          guibg=white 
 highlight PmenuSbar         guibg=white 
 highlight PmenuThumb        gui=reverse 
