@@ -72,8 +72,11 @@ highlight TabLineFill       gui=reverse
 highlight Underlined        guifg=magenta 
 "" Other
 highlight Ignore            guifg=white guifg=bg
-highlight Error             guifg=white guibg=red 
+"highlight Error             guifg=white guibg=red 
+highlight Error             guifg=white guibg=#af0000 
 highlight Todo              guifg=black guibg=yellow 
+"" YouCompleteMe
+highlight YcmErrorSection   guibg=#5f0000
 "" General Style
 highlight Comment           guifg=#00bb00 
 highlight Constant          guifg=#FF8000
