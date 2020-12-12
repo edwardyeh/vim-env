@@ -1,27 +1,6 @@
 "========================================
 "=== Editor Environment =================
 "========================================
-"set nocompatible
-"set nu
-"set tabstop=4
-"set shiftwidth=4
-"set expandtab
-"set showmode
-"set autoindent
-"set ruler
-"set nowrap
-"set nohlsearch
-"set incsearch
-"set cursorline
-"set sessionoptions-=curdir
-"set sessionoptions+=sesdir
-"set fdm=marker
-"set backspace=2
-"set listchars=tab:▷۰,trail:۰,eol:⌋
-"set noro
-"set diffexpr=
-"set list
-
 if has('win32') && !has('win32unix')
     "language messages zh_TW.utf-8
     "language messages en_US.utf-8
@@ -36,7 +15,6 @@ if has('win32') && !has('win32unix')
 else
     set guifont=DejaVu\ Sans\ Mono\ 10
 endif
-
 
 "========================================
 "=== Highlight Setting ==================

@@ -1,38 +1,38 @@
 "========================================
 "=== Common Setting =====================
 "========================================
-source ~/.vim/comm-vim-env/vimrc
-
 if has('win32') && !has('win32unix')
+    let s:vimcfg_path = '~/vimfiles'
+    let s:ctags_bin   = 'C:\Users\Public\DevKit\Vim\ctags58\ctags.exe'
+    let s:find_bin    = 'C:\Users\Public\DevKit\MSYS2-x64\usr\bin\find.exe'
     set listchars=tab:>.,trail:.,eol:$
     set backupdir=~/vimfiles/backup//
     set directory=~/vimfiles/swap//
     set undodir=~/vimfiles/undo//
-    let s:vimfiles_dir = 'vimfiles'
-    let s:ctags_bin    = 'C:\Users\Public\DevKit\Vim\ctags58\ctags.exe'
-    let s:find_bin     = 'C:\Users\Public\DevKit\MSYS2-x64\usr\bin\find.exe'
 elseif has('win32unix')
+    let s:vimcfg_path = '~/.vim'
+    let s:ctags_bin   = '/c/Users/Public/DevKit/Vim/ctags58/ctags.exe'
+    let s:find_bin    = 'find'
     set listchars=tab:▷۰,trail:۰,eol:⌋
     set backupdir=~/.vim/backup//
     set directory=~/.vim/swap//
     set undodir=~/.vim/undo//
-    let s:vimfiles_dir = '.vim'
-    let s:ctags_bin    = '/c/Users/Public/DevKit/Vim/ctags58/ctags.exe'
-    let s:find_bin     = 'find'
 else
+    let s:vimcfg_path = '~/.vim'
+    let s:ctags_bin   = 'ctags'
+    let s:find_bin    = 'find'
     set listchars=tab:▷۰,trail:۰,eol:⌋
     set backupdir=~/.vim/backup//
     set directory=~/.vim/swap//
     set undodir=~/.vim/undo//
-    let s:vimfiles_dir = '.vim'
-    let s:ctags_bin    = 'ctags'
-    let s:find_bin     = 'find'
 endif
 
+exec "source ".s:vimcfg_path."/comm-vim-env/vimrc"
+
 "========================================
-"=== Plugin Setting =====================
+"=== Plugin Manager =====================
 "========================================
-""=== Vim-Plug      {{{
+""=== Vim-Plug
 call plug#begin('~/.vim/plugged')
     Plug 'vim-plugins/nerdtree', {'on': 'NERDTreeToggle'}
     Plug 'vim-scripts/ctags.vim'
@@ -53,46 +53,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-scripts/vcscommand.vim'
     Plug 'vim-scripts/wokmarks.vim'
 call plug#end()
-"}}}
 
-""=== Vundle        {{{
-"set nocompatible
-"filetype off
-"let s:bundle_path = '~/'.s:vimfiles_dir.'/bundle/'
-"let &rtp = &rtp.','.s:bundle_path.'Vundle.vim'
-"call vundle#begin(s:bundle_path)
-
-"Plugin 'gmarik/Vundle.vim'
-"Plugin 'vim-plugins/nerdtree'
-"Plugin 'ctags.vim'
-"Plugin 'chazy/cscope_maps'
-"Plugin 'kien/ctrlp.vim'
-"Plugin 'will133/vim-dirdiff'
-"Plugin 'matchit.zip'
-"Plugin 'tpope/vim-surround'
-"Plugin 'majutsushi/tagbar'
-""Plugin 'taglist.vim'
-"Plugin 'michaeljsmith/vim-indent-object'
-"Plugin 'scrooloose/nerdcommenter'
-"Plugin 'vcscommand.vim'
-"Plugin 'wokmarks.vim'
-"Plugin 'fholgado/minibufexpl.vim'
-"Plugin 'godlygeek/tabular'
-"Plugin 'itchyny/lightline.vim'
-"Plugin 'gcmt/taboo.vim'
-""Plugin 'winmanager'
-""Plugin 'Lokaltog/vim-powerline'
-""Plugin 'bling/vim-airline'
-
-"if !has('win32') && !has('win32unix')
-"    Plugin 'ShowMarks'
-"endif
-
-"call vundle#end()
-"filetype on
-"filetype plugin on
-"}}}
-
+"========================================
+"=== Plugin Setting =====================
+"========================================
 ""=== NERDTree      {{{
 nmap <leader>e :NERDTreeToggle<CR>
 "nmap <C-a> <C-w><Left>
