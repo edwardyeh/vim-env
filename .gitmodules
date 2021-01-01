@@ -4,3 +4,6 @@
 [submodule "comm-vim-env"]
 	path = comm-vim-env
 	url = https://github.com/edwardyeh/comm-vim-env.git
+[submodule "autoload"]
+	path = autoload
+	url = https://github.com/junegunn/vim-plug.git
