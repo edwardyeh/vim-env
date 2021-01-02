@@ -54,7 +54,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'gcmt/taboo.vim'
     Plug 'vim-scripts/vcscommand.vim'
     Plug 'vim-scripts/wokmarks.vim'
-    Plug 'ycm-core/YouCompleteMe'
+    "Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 "========================================
