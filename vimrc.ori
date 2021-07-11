@@ -222,7 +222,9 @@ nnoremap <c-k> :YcmCompleter GoToDeclaration<CR>|
 nnoremap <c-h> :YcmCompleter GoToDefinition<CR>|
 nnoremap <c-j> :YcmCompleter GoToDefinitionElseDeclaration<CR>|
 
-"let g:ycm_auto_hover = ''
+" Enable/Disable auto hover
+let g:ycm_auto_hover = ''
+
 nmap <leader>D <plug>(YCMHover)
 
 let g:ycm_seed_identifiers_with_syntax = 1
