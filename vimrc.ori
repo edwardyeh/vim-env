@@ -109,6 +109,17 @@ let Tlist_Ctags_Cmd = s:ctags_bin
 set cscopequickfix=s-,c-,d-,i-,t-,e- 
 "}}}
 
+"=== FZF           {{{
+nnoremap <leader>fl :Lines
+nnoremap <leader>fb :BLines
+nnoremap <leader>ff :Files
+nnoremap <leader>fg :GFiles
+nnoremap <leader>f? :GFiles?
+nnoremap <leader>ft :Tags<cr>
+nnoremap <leader>fa :Ag
+nnoremap <leader>fc :Commits
+"}}}
+
 "=== CtrlP         {{{
 let g:ctrlp_map = ',,'
 let g:ctrlp_clear_cache_on_exit = 0
