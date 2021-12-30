@@ -172,10 +172,10 @@ command! -range -nargs=+ TAZ  <line1>,<line2>Tabularize/<args>\zs/c0
 command! -range -nargs=+ TAFZ <line1>,<line2>Tabularize/<args>\zs /l0
 command! -range -nargs=+ TRFZ <line1>,<line2>Tabularize/<args>\zs /r0
 command! -range -nargs=+ TCFZ <line1>,<line2>Tabularize/<args>\zs /c0
-command! -range -nargs=+ TAST exec <line1>.",".<line2>."TAS<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
-command! -range -nargs=+ TADT exec <line1>.",".<line2>."TAD<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
+command! -range -nargs=+ TAST exec <line1>.",".<line2>."TAS<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab | noh
+command! -range -nargs=+ TADT exec <line1>.",".<line2>."TAD<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab | noh
 command! -range          TEQ  exec <line1>.",".<line2>."TAD ="
-command! -range          TCT  exec <line1>.",".<line2>."TAS\/\/" | <line1>,<line2>s/ \/\//<TAB>\/\/ /g | retab
+command! -range          TCT  exec <line1>.",".<line2>."TAS\/\/" | <line1>,<line2>s/ \/\//<TAB>\/\/ /g | retab | noh
 "}}}
 
 "=== NERD commenter     {{{
