@@ -40,7 +40,7 @@ highlight PmenuSbar         guibg=white
 highlight PmenuThumb        gui=reverse 
 "" Cursor
 highlight CursorLine        guibg=#1c1c00
-highlight CursorColumn      gui=reverse guibg=white 
+highlight CursorColumn      gui=none guibg=#1c1c00 guifg=yellow
 highlight Cursor            guifg=bg guibg=fg
 highlight lCursor           guifg=bg guibg=fg
 "" Message
