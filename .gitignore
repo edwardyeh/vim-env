@@ -20,3 +20,4 @@ bundle/vim-surround/
 bundle/wokmarks.vim/
 bundle/lightline.vim/
 bundle/taboo.vim/
+local-install.tar.xz

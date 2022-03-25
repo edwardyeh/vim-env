@@ -21,6 +21,6 @@ rm -rf local-install.tar.xz
 
 tar Jcvf local-install.tar.xz \
     --exclude=plugged/YouCompleteMe \
-    autoload/vim-plug/ plugged/ \
-    bundle/ \
-    comm-vim-env/
+    comm-vim-env/ \
+    autoload/ bundle/ \
+    plugged/ 

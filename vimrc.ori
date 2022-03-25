@@ -34,58 +34,106 @@ exec "source ".s:vimcfg_path."/comm-vim-env/vimrc"
 "========================================
 ""=== Vim-Plug
 call plug#begin('~/.vim/plugged')
+    """ IDE
     Plug 'vim-plugins/nerdtree', {'on': 'NERDTreeToggle'}
+    Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+    Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
+    "Plug 'vim-scripts/taglist.vim', {'on': 'TlistToggle'}
+    Plug 'fholgado/minibufexpl.vim', {'on': 'MBEToggle'}
     Plug 'itchyny/lightline.vim'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'gcmt/taboo.vim'
+    Plug 'vim-scripts/vcscommand.vim'
+
+    """ Content Search
     Plug 'vim-scripts/ctags.vim'
     Plug 'chazy/cscope_maps'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } 
     Plug 'junegunn/fzf.vim'
     "Plug 'kien/ctrlp.vim'
-    Plug 'will133/vim-dirdiff', {'on': 'DirDiff'}
+
+    """ Content Select
     Plug 'vim-scripts/matchit.zip'
-    Plug 'tpope/vim-surround'
-    Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-    "Plug 'vim-scripts/taglist.vim', {'on': 'TlistToggle'}
     Plug 'michaeljsmith/vim-indent-object'
-    Plug 'fholgado/minibufexpl.vim', {'on': 'MBEToggle'}
+
+    """ Content Edit
+    "Plug 'jiangmiao/auto-pairs'
+    Plug 'tpope/vim-surround'
     Plug 'godlygeek/tabular'
     Plug 'scrooloose/nerdcommenter'
-    "Plug 'vim-scriots/winmanager', {'on': 'WMToggle'}
-    Plug 'gcmt/taboo.vim'
-    Plug 'vim-scripts/vcscommand.vim'
-    Plug 'vim-scripts/wokmarks.vim'
+
+    """ Aid Edit Tool
+    Plug 'will133/vim-dirdiff', {'on': 'DirDiff'}
     "Plug 'ycm-core/YouCompleteMe'
+    Plug 'MattesGroeger/vim-bookmarks'
+    Plug 'Yggdroot/indentLine'
 call plug#end()
 
 "========================================
 "=== Plugin Setting =====================
 "========================================
 "=== IDE Setting    {{{
-function IDEOpen ()
-    exec "MBEOpen"
-    exec "NERDTree"
-endfunction
+""" Auto Start
+"autocmd vimenter * NERDTree
+"autocmd VimEnter * nested :TagbarToggle
+"autocmd VimEnter * wincmd r
+"autocmd VimEnter * wincmd l
 
-function IDEClose ()
-    exec "MBEClose"
-    exec "NERDTreeClose"
-endfunction
 function IDEToggle ()
-    exec "MBEToggle"
+    "exec "MBEToggle"
     exec "NERDTreeToggle"
+    exec "TagbarToggle"
+    wincmd r
+    wincmd l
 endfunction
 
-nmap <leader>ws <ESC>:call IDEOpen()<CR>
-nmap <leader>wc <ESC>:call IDEClose()<CR>
 nmap <leader>wt <ESC>:call IDEToggle()<CR>
 "}}}
 
-"=== NERDTree      {{{
+"=== NERDTree  {{{
 nmap <leader>e :NERDTreeToggle<CR>
 "nmap <C-a> <C-w><Left>
 "nmap <C-s> <C-w><Right>
 "nmap <C-d> <C-w><Up>
 "nmap <C-f> <C-w><Down>
+
+let NERDTreeMinimalUI=1
+"let NERDTreeWinPos = 'left'
+"let g:NERDTreeWinSize = 60
+"}}}
+
+"=== Tagbar  {{{
+map <leader>t <ESC>:TagbarToggle<CR>
+
+let g:tagbar_ctags_bin = s:ctags_bin
+let g:tagbar_compact = 1
+let g:tagbar_left = 1
+let g:tagbar_vertical = 25
+let g:tagbar_width = 40
+let g:tagbar_autofocus = 1
+let g:tagbar_sort = 0
+let g:tagbar_autoshowtag = 1
+
+highlight link TagbarSignature Constant
+"}}}
+
+"=== Taglist  {{{
+" active/unactive order:TlistToggle
+"map <leader>t <ESC>:TlistToggle<CR>
+"
+"let Tlist_Show_One_File=1
+"let Tlist_Exit_OnlyWindow=1
+"}}}
+
+"=== MiniBufExplorer  {{{
+map <leader>be <ESC>:MBEToggle<CR>
+
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1
+let g:miniBufExplMoreThanOne=0
+let g:miniBufExplorerAutoStart = 0
 "}}}
 
 "=== Lightline  {{{
@@ -98,18 +146,27 @@ let g:lightline = {
     \ }
 "}}}
 
-"=== Ctags         {{{
+"=== vim-gitgutter  {{{
+nmap <leader>gt :GitGutterToggle<CR>
+
+"set updatetime = 100
+highlight GitGutterAdd    ctermfg=blue
+highlight GitGutterChange ctermfg=green
+highlight GitGutterDelete ctermfg=red
+"}}}
+
+"=== Ctags  {{{
 let Tlist_Ctags_Cmd = s:ctags_bin
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "}}}
 
-"=== Cscope        {{{
+"=== Cscope  {{{
 " open database: cs add path/xxx.out
 " Hot key: Ctrl-s, Ctrl-c, cw
 set cscopequickfix=s-,c-,d-,i-,t-,e- 
 "}}}
 
-"=== FZF           {{{
+"=== FZF  {{{
 nnoremap <leader>fl :Lines
 nnoremap <leader>fb :BLines
 nnoremap <leader>ff :Files
@@ -120,7 +177,7 @@ nnoremap <leader>fa :Ag
 nnoremap <leader>fc :Commits
 "}}}
 
-"=== CtrlP         {{{
+"=== CtrlP  {{{
 let g:ctrlp_map = ',,'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 1000000
@@ -128,45 +185,22 @@ let g:ctrlp_user_command = s:find_bin.' %s -type f'
 map ,. <ESC>:CtrlP .<CR>
 "}}}
 
-"=== DirDiff       {{{
-let g:DirDiffExcludes = "CVS,*.svn,*.git,*.swp,tags"
-"}}}
-
-"=== Matchit       {{{
+"=== Matchit  {{{
 let b:match_words = "`ifdef:`endif,begin:end,module:endmodule"
 "}}}
  
-"=== Tagbar        {{{
-let g:tagbar_ctags_bin = s:ctags_bin
-let g:tagbar_left = 1
-let g:tagbar_autofocus = 1
-highlight link TagbarSignature Constant
-map <leader>t <ESC>:TagbarToggle<CR>
-"}}}
-
-"=== Taglist       {{{
-" active/unactive order:TlistToggle
-"map <leader>t <ESC>:TlistToggle<CR>
-"let Tlist_Show_One_File=1
-"let Tlist_Exit_OnlyWindow=1
-"}}}
-
-"=== vim-indent-object      {{{
+"=== vim-indent-object  {{{
+" vi{   indent select in {}
 " vii   indent select
 " vai   indent select include upper one level
 "}}}
 
-"=== MiniBufExplorer   {{{
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplMoreThanOne=0
-let g:miniBufExplorerAutoStart = 0
-map <leader>et <ESC>:MBEToggle<CR>
+"=== auto-pairs  {{{
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutBackInsert = '<M-b>'
 "}}}
 
-"=== Tabular        {{{
+"=== Tabular  {{{
 command! -range -nargs=+ TA <line1>,<line2>Tabularize/<args>/l0
 command! -range -nargs=+ TR <line1>,<line2>Tabularize/<args>/r0
 command! -range -nargs=+ TC <line1>,<line2>Tabularize/<args>/c0
@@ -183,31 +217,20 @@ command! -range -nargs=+ TAZ  <line1>,<line2>Tabularize/<args>\zs/c0
 command! -range -nargs=+ TAFZ <line1>,<line2>Tabularize/<args>\zs /l0
 command! -range -nargs=+ TRFZ <line1>,<line2>Tabularize/<args>\zs /r0
 command! -range -nargs=+ TCFZ <line1>,<line2>Tabularize/<args>\zs /c0
-command! -range -nargs=+ TAST exec <line1>.",".<line2>."TAS<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab | noh
-command! -range -nargs=+ TADT exec <line1>.",".<line2>."TAD<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab | noh
+command! -range -nargs=+ TAST exec <line1>.",".<line2>."TAS<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
+command! -range -nargs=+ TADT exec <line1>.",".<line2>."TAD<args>" | <line1>,<line2>s/ <args>/<TAB><args>/g | retab
 command! -range          TEQ  exec <line1>.",".<line2>."TAD ="
-command! -range          TCT  exec <line1>.",".<line2>."TAS\/\/" | <line1>,<line2>s/ \/\//<TAB>\/\/ /g | retab | noh
+command! -range          TCT  exec <line1>.",".<line2>."TAS\/\/" | <line1>,<line2>s/ \/\//<TAB>\/\/ /g | retab
 "}}}
 
-"=== NERD commenter     {{{
+"=== NERD commenter  {{{
 let g:NERDCustomDelimiters = {
     \ 'vim': { 'left': '"', 'leftAlt': '"', 'rightAlt': '"' },
 \ }
 "}}}
 
-"=== Winmanager    {{{
-"let g:NERDTree_title="[NERDTree]"
-"let g:winManagerWindowLayout="NERDTree|TagList"
-"
-"function! NERDTree_Start()
-"    exec 'NERDTree'
-"endfunction
-"
-"function! NERDTree_IsValid()
-"    return 1
-"endfunction
-"
-"nmap wm :WMToggle<CR>
+"=== DirDiff  {{{
+let g:DirDiffExcludes = "CVS,*.svn,*.git,*.swp,tags"
 "}}}
 
 "=== YouCompleteMe  {{{
@@ -245,3 +268,18 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " \}
 "}}}
 
+"=== indentLine  {{{
+nmap <leader>it :IndentLinesToggle<CR>
+
+let g:indentLine_enabled = 1
+let g:indentLine_char = '┊'
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+"" Foreground Color (Vim, GVim)
+let g:indentLine_color_term = 239
+"let g:indentLine_color_gui = '#A4E57E'
+
+"" Background Color (Vim, GVim)
+"let g:indentLine_bgcolor_term = 202
+"let g:indentLine_bgcolor_gui = '#FF5F00'
+"}}}
