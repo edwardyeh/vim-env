@@ -23,4 +23,5 @@ tar Jcvf local-install.tar.xz \
     --exclude=plugged/YouCompleteMe \
     comm-vim-env/ \
     autoload/ bundle/ \
-    plugged/ 
+    plugged/ \
+    ~/.fzf/
