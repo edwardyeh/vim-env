@@ -63,8 +63,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdcommenter'
 
     """ Aid Edit Tool
-    Plug 'will133/vim-dirdiff', {'on': 'DirDiff'}
-    "Plug 'ycm-core/YouCompleteMe'
+    "Plug 'will133/vim-dirdiff', {'on': 'DirDiff'}
+    Plug 'edwardyeh/vim-dirdiff', {'branch': 'devel', 'on': 'DirDiff'}
+    Plug 'ycm-core/YouCompleteMe'
     Plug 'MattesGroeger/vim-bookmarks'
     Plug 'Yggdroot/indentLine'
 call plug#end()
@@ -88,6 +89,9 @@ function IDEToggle ()
 endfunction
 
 nmap <leader>wt <ESC>:call IDEToggle()<CR>
+
+nmap fl <S-h><C-w>h
+nmap tl <S-h><C-w>h<C-w>j
 "}}}
 
 "=== NERDTree  {{{
@@ -266,6 +270,10 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " \   'c,cpp,python,java,go,erlang,perl':['re!\w{2}'],
 " \   'cs,lua,javascript':['re!\w{2}'],
 " \}
+"}}}
+
+"=== vim-dirdiff  {{{
+"lef g:DirDiffExcludes = ""
 "}}}
 
 "=== indentLine  {{{
