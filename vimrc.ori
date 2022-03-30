@@ -90,8 +90,8 @@ endfunction
 
 nmap <leader>wt <ESC>:call IDEToggle()<CR>
 
-nmap fl <S-h><C-w>h
-nmap tl <S-h><C-w>h<C-w>j
+nmap fs <S-h><C-w>h
+nmap ts <S-h><C-w>h<C-w>j
 "}}}
 
 "=== NERDTree  {{{
