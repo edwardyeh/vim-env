@@ -98,6 +98,6 @@ highlight cStructure        guifg=#3c8ad9
 highlight cStorageClass     guifg=#3c8ad9
 highlight cshVariables      guifg=magenta
 """ vim-gitgutter
-highlight GitGutterAdd      guifg=blue  guibg=black
-highlight GitGutterChange   guifg=green guibg=black
-highlight GitGutterDelete   guifg=red   guibg=black
+highlight GitGutterAdd      guifg=#0087ff guibg=black
+highlight GitGutterChange   guifg=#00ff00 guibg=black
+highlight GitGutterDelete   guifg=#ff005f guibg=black
