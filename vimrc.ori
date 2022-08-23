@@ -35,11 +35,11 @@ exec "source ".s:vimcfg_path."/comm-vim-env/vimrc"
 ""=== Vim-Plug
 call plug#begin('~/.vim/plugged')
     """ IDE
-    Plug 'vim-plugins/nerdtree', {'on': 'NERDTreeToggle'}
-    Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+    Plug 'vim-plugins/nerdtree'
+    "Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
     Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
     "Plug 'vim-scripts/taglist.vim', {'on': 'TlistToggle'}
-    Plug 'fholgado/minibufexpl.vim', {'on': 'MBEToggle'}
+    Plug 'fholgado/minibufexpl.vim'
     Plug 'itchyny/lightline.vim'
     Plug 'airblade/vim-gitgutter'
     Plug 'gcmt/taboo.vim'

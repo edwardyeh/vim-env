@@ -24,12 +24,12 @@ syntax on
 
 "" Editor
 highlight LineNr            guifg=green
-highlight CursorLineNr      gui=bold guifg=yellow
+highlight CursorLineNr      gui=bold guifg=yellow guibg=#1c1c00
 highlight StatusLine        gui=NONE guifg=white guibg=blue
 highlight StatusLineNC      gui=NONE guifg=black guibg=Gray80
 highlight VertSplit         gui=NONE guifg=black guibg=Gray80
 highlight Title             guifg=magenta  
-highlight Visual            gui=reverse 
+highlight Visual            gui=none guifg=DarkGrey guibg=#404040
 highlight VisualNOS         gui=underline 
 highlight Directory         guifg=#3c8ad9
 highlight WildMenu          guifg=black guibg=yellow 
@@ -42,7 +42,7 @@ highlight PmenuThumb        gui=reverse
 highlight CursorLine        guibg=#1c1c00
 highlight CursorColumn      guibg=#1c1c00
 "highlight CursorColumn      gui=none guibg=#1c1c00 guifg=yellow
-highlight Cursor            guifg=bg guibg=fg
+highlight Cursor            gui=bold guifg=bg guibg=fg
 highlight lCursor           guifg=bg guibg=fg
 "" Message
 highlight ErrorMsg          guifg=white guibg=red
