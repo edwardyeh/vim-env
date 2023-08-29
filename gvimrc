@@ -38,6 +38,7 @@ highlight Pmenu             guibg=#87005f
 highlight PmenuSel          guibg=white 
 highlight PmenuSbar         guibg=white 
 highlight PmenuThumb        gui=reverse 
+highlight ColorColumn       guifg=Gray80 guibg=#5f0000
 "" Cursor
 highlight CursorLine        guibg=#1c1c00
 highlight CursorColumn      guibg=#1c1c00
