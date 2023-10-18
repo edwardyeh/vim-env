@@ -1,6 +1,11 @@
 "========================================
 "=== Editor Environment =================
 "========================================
+set colorcolumn=80
+
+"========================================
+"=== Editor Environment =================
+"========================================
 if has('win32') && !has('win32unix')
     "language messages zh_TW.utf-8
     "language messages en_US.utf-8
@@ -38,7 +43,7 @@ highlight Pmenu             guibg=#87005f
 highlight PmenuSel          guibg=white 
 highlight PmenuSbar         guibg=white 
 highlight PmenuThumb        gui=reverse 
-highlight ColorColumn       guifg=Gray80 guibg=#5f0000
+highlight ColorColumn       guifg=Gray80 guibg=#1c1c1c
 "" Cursor
 highlight CursorLine        guibg=#1c1c00
 highlight CursorColumn      guibg=#1c1c00
@@ -76,7 +81,7 @@ highlight Underlined        guifg=magenta
 highlight Ignore            guifg=white guifg=bg
 "highlight Error             guifg=white guibg=red 
 highlight Error             guifg=white guibg=#af0000 
-highlight Todo              guifg=black guibg=yellow 
+highlight Todo              gui=bold guifg=Gold3 guibg=black
 "" YouCompleteMe
 highlight YcmErrorSection   guibg=#5f0000
 "" General Style
