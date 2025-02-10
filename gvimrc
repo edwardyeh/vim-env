@@ -107,3 +107,5 @@ highlight cshVariables      guifg=magenta
 highlight GitGutterAdd      guifg=#0087ff guibg=black
 highlight GitGutterChange   guifg=#00ff00 guibg=black
 highlight GitGutterDelete   guifg=#ff005f guibg=black
+""" markdown
+highlight! link markdownError Normal

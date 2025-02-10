@@ -286,6 +286,10 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 "lef g:DirDiffExcludes = ""
 "}}}
 
+"=== vim-bookmarks  {{{
+let g:bookmark_auto_close = 1
+"}}}
+
 "=== indentLine  {{{
 nmap <leader>it :IndentLinesToggle<CR>
 
