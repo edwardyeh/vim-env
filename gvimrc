@@ -1,11 +1,6 @@
 "========================================
 "=== Editor Environment =================
 "========================================
-set colorcolumn=80
-
-"========================================
-"=== Editor Environment =================
-"========================================
 if has('win32') && !has('win32unix')
     "language messages zh_TW.utf-8
     "language messages en_US.utf-8
@@ -20,6 +15,8 @@ if has('win32') && !has('win32unix')
 else
     set guifont=DejaVu\ Sans\ Mono\ 10
 endif
+
+set colorcolumn=80
 
 "========================================
 "=== Highlight Setting ==================
@@ -93,7 +90,8 @@ highlight Statement         guifg=#3c8ad9
 highlight PreProc           guifg=magenta 
 highlight Type              guifg=#3c8ad9
 highlight Special           guifg=#bbbbbb
-highlight String            guifg=#cf1500
+"highlight String            guifg=#cf1500
+highlight String            guifg=#ff0000
 "" C/C++ Style
 highlight cStatement        guifg=#f7c709
 highlight cLabel            guifg=#f7c709
