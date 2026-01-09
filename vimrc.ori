@@ -4,7 +4,7 @@
 if has('win32') && !has('win32unix')
     let s:vimcfg_path = '~/vimfiles'
     let s:ctags_bin   = 'C:\Users\Public\DevKit\Vim\ctags58\ctags.exe'
-    let s:find_bin    = 'C:\Users\Public\DevKit\MSYS2-x64\usr\bin\find.exe'
+    let s:find_bin    = 'C:\Users\Public\DevKit\msys64\usr\bin\find.exe'
     set listchars=tab:>.,trail:.,eol:$
     set backupdir=~/vimfiles/backup//
     set directory=~/vimfiles/swap//

@@ -1,11 +1,6 @@
 "========================================
 "=== Editor Environment =================
 "========================================
-set colorcolumn=80
-
-"========================================
-"=== Editor Environment =================
-"========================================
 if has('win32') && !has('win32unix')
     "language messages zh_TW.utf-8
     "language messages en_US.utf-8
@@ -20,6 +15,8 @@ if has('win32') && !has('win32unix')
 else
     set guifont=DejaVu\ Sans\ Mono\ 10
 endif
+
+set colorcolumn=80
 
 "========================================
 "=== Highlight Setting ==================
