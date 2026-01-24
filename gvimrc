@@ -83,7 +83,7 @@ highlight Todo              gui=bold guifg=Gold3 guibg=black
 highlight YcmErrorSection   guibg=#5f0000
 "" General Style
 highlight Comment           guifg=#00bb00 
-highlight Constant          guifg=#FF8000
+highlight Constant          guifg=#ff8000
 highlight Special           guifg=magenta 
 highlight Identifier        guifg=cyan 
 highlight Statement         guifg=#3c8ad9 
@@ -107,3 +107,6 @@ highlight GitGutterChange   guifg=#00ff00 guibg=black
 highlight GitGutterDelete   guifg=#ff005f guibg=black
 """ markdown
 highlight! link markdownError Normal
+""" NERDTree
+highlight NERDTreeFlat      guifg=#ff8000
+highlight NERDTreeRO        guifg=cyan
